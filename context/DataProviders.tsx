@@ -70,7 +70,7 @@ export const DataContext = createContext<DataContextType>({
   setOrders: () => {},
   HeaderAdmin: "",
   setHeaderAdmin: () => {},
-  Introduction: "",
+  Introduction: [],
   setIntroduction: () => {},
 
   Sale: {},
@@ -100,7 +100,7 @@ export const DataProviders: React.FC<Props> = ({ children }) => {
   const [productTypes, setProductType] = useState([]);
   const [Branches, setBranches] = useState([]);
   const [Orders, setOrders] = useState([]);
-  const [Introduction, setIntroduction] = useState({});
+  const [Introduction, setIntroduction] = useState([]);
   const [Sale, setSale] = useState({});
   const [Notification, setNotification] = useState([]);
   const [CartItems, setCartItems] = useState([]);

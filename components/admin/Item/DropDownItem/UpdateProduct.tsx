@@ -1,12 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { notification } from "antd";
-import TextEditor from "../CKEditor/TextEditor";
+import dynamic from "next/dynamic";
 import { useStateProvider } from "@context/StateProvider";
 import { useData } from "@context/DataProviders";
 import { updateDocument } from "@config/Services/Firebase/FireStoreDB";
 
 const UpdateProduct: React.FC = () => {
+  const Editor = dynamic(() => import("../../Item/CKEditor/TextEditor"), {
+    ssr: false,
+  });
+
   const [discount, setDiscount] = useState<number>(0);
   const [newPrice, setNewPrice] = useState<number>(0);
   const [productStatus, setProductStatus] = useState<string>("Còn hàng");
@@ -144,7 +148,7 @@ const UpdateProduct: React.FC = () => {
                 <div className="  flex flex-col gap-3 pt-3 h-[400px] overflow-y-auto">
                   <h3 className="uppercase font-bold">Chi tiết sản phẩm</h3>
                   <div className="">
-                    <TextEditor
+                    <Editor
                       editorData={editorData}
                       setEditorData={setEditorData}
                     />

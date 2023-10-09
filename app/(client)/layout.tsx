@@ -13,7 +13,7 @@ const layout: React.FC<ClientLayoutProps> = ({ children }) => {
   return (
     <>
       <Header />
-      <div className="mt-16">{children}</div>
+      <div className="">{children}</div>
 
       <Footer />
       <div className="relative z-50">

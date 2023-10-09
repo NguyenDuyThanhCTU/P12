@@ -41,12 +41,14 @@ const Fetch: React.FC = () => {
           setTradeMarkData(items);
         } else if (items.id === "SocialMedia") {
           setSocialMedia(items.Data);
-        } else if (items.id === "Introduction") {
-          setIntroduction(items);
         } else if (items.id === "Sale") {
           setSale(items);
         }
       });
+    });
+
+    getAllDocuments("Introduction").then((data: any) => {
+      setIntroduction(data);
     });
 
     getAllDocuments("accounts").then((data: any) => {
@@ -90,8 +92,6 @@ const Fetch: React.FC = () => {
             setTradeMarkData(items);
           } else if (items.id === "SocialMedia") {
             setSocialMedia(items.Data);
-          } else if (items.id === "Introduction") {
-            setIntroduction(items);
           } else if (items.id === "Sale") {
             setSale(items);
           }

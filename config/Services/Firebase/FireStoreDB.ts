@@ -203,6 +203,26 @@ export const updateDocument = async (
   await updateDoc(doc(db, collectionName, id), newData);
 };
 
+export const updateDocumentByField = async (
+  collectionName: string,
+  field: string,
+  value: any,
+  newData: any
+) => {
+  const collectionRef = collection(db, collectionName);
+  const q = query(collectionRef, where(field, "==", value));
+  const querySnapshot = await getDocs(q);
+
+  if (querySnapshot.size === 0) {
+    throw new Error(`Document with ${field} = ${value} not found.`);
+  } else if (querySnapshot.size > 1) {
+    throw new Error(`Multiple documents found with ${field} = ${value}.`);
+  } else {
+    const docSnapshot = querySnapshot.docs[0];
+    await updateDoc(doc(db, collectionName, docSnapshot.id), newData);
+  }
+};
+
 export const updateArrayFieldAtIndex = async (
   collectionName: string,
   id: string,

@@ -2,12 +2,16 @@
 import React, { useState, useEffect } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { notification } from "antd";
-import TextEditor from "../CKEditor/TextEditor";
+import dynamic from "next/dynamic";
 import { useStateProvider } from "@context/StateProvider";
 import { useData } from "@context/DataProviders";
 import { updateDocument } from "@config/Services/Firebase/FireStoreDB";
 
 const AddPost: React.FC = () => {
+  const Editor = dynamic(() => import("../../Item/CKEditor/TextEditor"), {
+    ssr: false,
+  });
+
   const [editorData, setEditorData] = useState<string>("");
   const [PostSort, setPost] = useState<any>();
   const { setIsRefetch, setDropDown } = useStateProvider();
@@ -60,7 +64,7 @@ const AddPost: React.FC = () => {
             </p>
 
             <div className=" w-[60vw] mx-auto overflow-y-auto h-[500px] font-LexendDeca font-light">
-              <TextEditor
+              <Editor
                 initialValue={
                   PostSort?.content ? PostSort.content : initialEditor
                 }

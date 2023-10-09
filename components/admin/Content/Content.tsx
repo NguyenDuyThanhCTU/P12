@@ -4,7 +4,6 @@ import Contact from "./Webconfig/Contact/Contact";
 import Trademark from "./Webconfig/Trademark/Trademark";
 import SocialMedia from "./SocialMedia/SocialMedia";
 import Slide from "./Slide/Slide";
-import Post from "./Post/Post";
 import Video from "./Video/Video";
 
 import Product from "./Service/Product/Product";
@@ -14,6 +13,7 @@ import Introduce from "./Service/Introduce/introduce";
 import Account from "./Account/Account";
 import Sale from "./Sale/Sale";
 import { useStateProvider } from "@context/StateProvider";
+import OverallPosts from "./Post/OverallPosts";
 
 const Content: React.FC = () => {
   const { isSelected } = useStateProvider();
@@ -37,7 +37,7 @@ const Content: React.FC = () => {
         ) : isSelected === 3 ? (
           <>
             <div className="p-5 d:px-10 p:px-2 flex justify-start gap-10">
-              <Post />
+              <OverallPosts />
             </div>
           </>
         ) : isSelected === 4 ? (

@@ -95,7 +95,7 @@ export const ProductSidebarAdmin = [
     icon: "AiOutlineUnorderedList",
   },
   {
-    name: "Chi nhánh",
+    name: "Chi nhánh phòng vé",
     icon: "CgListTree",
   },
 ];
@@ -247,35 +247,50 @@ export const SocialMediaCustom = [
   },
 ];
 
-export const HeaderItems = [
-  {
-    name: "Trang chủ",
-    link: "",
-  },
+export const mainHeaderItems = [
   {
     name: "Giới thiệu",
     link: "gioi-thieu",
   },
-  {
-    name: "Sản phẩm",
-    link: "san-pham/tat-ca-san-pham?pageNumber=1",
-  },
 
   {
-    name: "Quy trình sản xuất",
-    link: "quy-trinh-san-xuat",
+    name: "Cẩm nang du lịch",
+    link: "cam-nang-du-lich",
   },
   {
-    name: "Hợp tác",
-    link: "hop-tac",
-  },
-  {
-    name: "Tin tức & Sự kiện",
-    link: "tin-tuc-su-kien",
+    name: "Thư viện hình ảnh",
+    link: "thu-vien-hinh-anh",
   },
   {
     name: "Liên hệ",
     link: "lien-he",
+  },
+  {
+    name: "Tuyển dụng",
+    link: "tuyen-dung",
+  },
+];
+
+export const subHeaderItems = [
+  {
+    name: "Dịch vụ",
+    link: "dich-vu",
+  },
+  {
+    name: "Giá vé",
+    link: "gia-ve",
+  },
+  {
+    name: "Mua vé trực tuyến",
+    link: "mua-ve-truc-tuyen",
+  },
+  {
+    name: "Quan hệ cổ đông",
+    link: "quan-he-co-dong",
+  },
+  {
+    name: "Khuyến mãi",
+    link: "khuyen-mai",
   },
 ];
 
@@ -354,55 +369,75 @@ export const TypeProductItems = [
   },
 ];
 
+export const IntroduceItems = [
+  {
+    label: "Giới thiệu",
+    value: "/",
+  },
+  {
+    label: "Tổng quan",
+    value: "tong-quan",
+  },
+  {
+    label: "Sơ đồ tổ chức",
+    value: "so-do-to-chuc",
+  },
+  {
+    label: "Điều lệ vận chuyển",
+    value: "dieu-le-van-chuyen",
+  },
+  {
+    label: "Điều khoản và điều kiện sử dụng",
+    value: "dieu-khoan-va-dieu-kien-su-dung",
+  },
+  {
+    label: "Chính sách bảo mật thông tin",
+    value: "chinh-sach-bao-mat-thong-tin",
+  },
+  {
+    label: "Điều kiện đặt vé trực tuyến",
+    value: "dieu-kien-dat-ve-truc-tuyen",
+  },
+  {
+    label: "Quy định hoàn đổi vé online",
+    value: "quydinh-hoan-doi-ve-online",
+  },
+];
+
 export const PolicyItems = [
   {
-    title: "QUI ĐỊNH HÌNH THỨC THANH TOÁN",
+    title: "Điều lệ vận chuyển",
     content: "Nội dung bài viết 1",
-    url: "qui-dinh-hinh-thuc-thanh-toan",
+    url: "dieu-le-van-chuyen",
     type: "policy",
     image: "",
   },
   {
-    title: "CHÍNH SÁCH BẢO HÀNH",
+    title: "Điều khoản và điều kiện sử dụng",
     content: "Nội dung bài viết ",
-    url: "chinh-sach-bao-hanh",
+    url: "dieu-khoan-va-dieu-kien-su-dung",
     type: "policy",
     image: "",
   },
   {
-    title: "CHÍNH SÁCH BẢO VỆ THÔNG TIN CÁ NHÂN",
+    title: "Chính sách bảo mật thông tin",
     content: "Nội dung bài viết ",
-    url: "chinh-sach-bao-ve-thong-tin-ca-nhan",
+    url: "chinh-sach-bao-mat-thong-tin",
     type: "policy",
     image: "",
   },
   {
-    title: "CHÍNH SÁCH ĐỔI TRẢ HÀNG",
+    title: "Điều kiện đặt vé trực tuyến",
     content: "Nội dung bài viết ",
-    url: "chinh-sach-doi-tra-hang",
+    url: "dieu-kien-dat-ve-truc-tuyen",
     type: "policy",
     image: "",
   },
   {
-    title: "CHÍNH SÁCH VẬN CHUYỂN",
+    title: "Quy định hoàn đổi vé online",
     content: "Nội dung bài viết ",
-    url: "chinh-sach-van-chuyen",
+    url: "quy-dinh-hoan-doi-ve-online",
     type: "policy",
-    image: "",
-  },
-  {
-    title: "",
-    content: "Nội dung bài viết ",
-    url: "",
-    type: "",
-    image: "",
-  },
-  {
-    title:
-      'YẾN SÀO TRÍ SƠN NHẬN GIẢI "SẢN PHẨM CÔNG NGHIỆP NÔNG THÔN TIÊU BIỂU CẤP TỈNH" NĂM 2023',
-    content: "Nội dung bài viết ",
-    url: "",
-    type: "news",
     image: "",
   },
 ];

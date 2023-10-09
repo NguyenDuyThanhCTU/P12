@@ -12,7 +12,6 @@ export async function getDataByPaginationProps(Collection: string) {
 
 export async function getDataByTypeProps(
   Collection: string,
-
   field: string,
   id: string
 ) {

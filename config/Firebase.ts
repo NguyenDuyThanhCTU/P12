@@ -19,19 +19,19 @@ import { getAuth } from "firebase/auth";
 // };
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBwlo4xsYtGAqxKol-RVHPJaD04pm5zTwg",
+  apiKey: "AIzaSyA0zFVIz_68Lv3DX9pga_MGzcQty05ZcDw",
 
-  authDomain: "xetoanphuoc.firebaseapp.com",
+  authDomain: "superdong-51e09.firebaseapp.com",
 
-  projectId: "xetoanphuoc",
+  projectId: "superdong-51e09",
 
-  storageBucket: "xetoanphuoc.appspot.com",
+  storageBucket: "superdong-51e09.appspot.com",
 
-  messagingSenderId: "392079889113",
+  messagingSenderId: "276536016778",
 
-  appId: "1:392079889113:web:437d6b166571a6bb4ba4c8",
+  appId: "1:276536016778:web:cb20080b7a1000191e9273",
 
-  measurementId: "G-HGCXSEE0E5",
+  measurementId: "G-RXJF1T08KM",
 };
 
 const app = initializeApp(firebaseConfig);

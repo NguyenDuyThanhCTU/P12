@@ -37,7 +37,6 @@ const ProductPage = async ({
     }
   }
 
-  console.log(searchParams.pageNumber);
   return (
     <>
       <div className="h-10 flex  justify-center items-center gap-5 ">

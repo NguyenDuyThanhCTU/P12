@@ -51,7 +51,8 @@ const Header: React.FC = () => {
         <div className="cursor-pointer flex gap-20  ">
           <div>
             <div className="hover:scale-110 duration-300 ">
-              <Clock />
+              {/* <Clock /> */}
+              Xin chào, {HeaderAdmin.name}
             </div>
           </div>
         </div>
@@ -80,7 +81,7 @@ const Header: React.FC = () => {
               </div>
             </div>
 
-            <p className="inline-block ml-3">{HeaderAdmin?.displayName}</p>
+            <p className="inline-block ml-3">{HeaderAdmin?.name}</p>
           </div>
         </div>
       </div>
@@ -115,7 +116,7 @@ const Header: React.FC = () => {
             </div>
 
             <p className="inline-block ml-3" onClick={() => setOption(!Option)}>
-              {HeaderAdmin?.displayName}
+              {HeaderAdmin?.name}
             </p>
           </div>
         </div>

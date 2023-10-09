@@ -12,7 +12,7 @@ interface BranchData {
   address: string;
   hotline: string;
   email: string;
-  location: string;
+  worktime: string;
 }
 
 const AddBranch: React.FC = () => {
@@ -20,20 +20,19 @@ const AddBranch: React.FC = () => {
   const [BranchAddress, setBranchAddress] = useState<string>("");
   const [BranchHotline, setBranchHotline] = useState<string>("");
   const [BranchEmail, setBranchEmail] = useState<string>("");
-  const [BranchLocation, setBranchLocation] = useState<string>("");
+  const [BranchWorktime, setBranchWorktime] = useState<string>("");
   const { setIsRefetch, setDropDown } = useStateProvider();
-  const { Branches } = useData();
 
   const handleDiscard = () => {
     setBranchName("");
     setBranchAddress("");
     setBranchHotline("");
     setBranchEmail("");
-    setBranchLocation("");
+    setBranchWorktime("");
   };
 
   const HandleSubmit = () => {
-    if (!BranchName || !BranchAddress || !BranchHotline || !BranchEmail) {
+    if (!BranchName || !BranchAddress || !BranchHotline) {
       notification.error({
         message: "Lỗi !",
         description: "Vui lòng nhập đầy đủ thông tin!",
@@ -44,7 +43,7 @@ const AddBranch: React.FC = () => {
         address: BranchAddress,
         hotline: BranchHotline,
         email: BranchEmail,
-        location: BranchLocation,
+        worktime: BranchWorktime,
       };
 
       addDocument("branches", data).then(() => {
@@ -53,6 +52,7 @@ const AddBranch: React.FC = () => {
           description: "Thông tin đã được CẬP NHẬT !",
         });
         setIsRefetch("CRUD branches");
+        setDropDown("");
         handleDiscard();
       });
     }
@@ -67,8 +67,8 @@ const AddBranch: React.FC = () => {
       <div className="w-[80vw] h-[75vh] relative bg-white flex font-LexendDeca cursor-pointer rounded-sm ">
         <div className="items-center justify-center  w-full flex  ">
           <div className="flex w-[56vw]  justify-center gap-4 flex-col items-center ">
-            <p className="text-2xl font-bold text-center mb-5">
-              Thêm loại sản phẩm
+            <p className="text-2xl font-bold text-center mb-5 uppercase">
+              Thêm chi nhánh
             </p>
 
             <div className="flex gap-5 justify-center w-[50vw] mx-auto">
@@ -104,19 +104,12 @@ const AddBranch: React.FC = () => {
               </div>
               <div className="flex-1">
                 <Input
-                  text={`Vị trí`}
-                  Value={BranchLocation}
-                  setValue={setBranchLocation}
+                  text={`Giờ làm việc`}
+                  Value={BranchWorktime}
+                  setValue={setBranchWorktime}
                   Input={true}
                   PlaceHolder=""
                 />
-                <iframe
-                  src={BranchLocation ? BranchLocation : Branches.location}
-                  className="border"
-                  width="300"
-                  height="200"
-                  loading="lazy"
-                ></iframe>
               </div>
             </div>
             <div className="flex gap-6 mt-10">
