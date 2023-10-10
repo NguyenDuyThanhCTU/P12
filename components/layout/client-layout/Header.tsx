@@ -80,7 +80,7 @@ const Header = () => {
                     {mainHeaderItems.map((items: any, idx: any) => (
                       <Link
                         className="font-light hover:text-mainorange"
-                        href={items.link}
+                        href={`/${items.link}`}
                         key={idx}
                       >
                         {items.name}

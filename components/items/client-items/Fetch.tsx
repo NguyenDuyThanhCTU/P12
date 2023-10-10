@@ -22,7 +22,9 @@ const Fetch: React.FC = () => {
     setOrders,
     setBranches,
     setVideos,
-    setPosts,
+    setNews,
+    setGallery,
+    setTravelHandbook,
     setIntroduction,
 
     setSale,
@@ -77,6 +79,15 @@ const Fetch: React.FC = () => {
 
     getAllDocuments("videos").then((data: any) => {
       setVideos(data?.reverse());
+    });
+    getAllDocuments("news").then((data: any) => {
+      setNews(data?.reverse());
+    });
+    getAllDocuments("gallery").then((data: any) => {
+      setGallery(data?.reverse());
+    });
+    getAllDocuments("TravelHandbook").then((data: any) => {
+      setTravelHandbook(data?.reverse());
     });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -137,9 +148,17 @@ const Fetch: React.FC = () => {
       getProducts("products").then((data: any) => {
         setProducts(data);
       });
-    } else if (isRefetch === "CRUD posts") {
-      getProducts("posts").then((data: any) => {
-        setPosts(data);
+    } else if (isRefetch === "CRUD news") {
+      getAllDocuments("news").then((data: any) => {
+        setNews(data?.reverse());
+      });
+    } else if (isRefetch === "CRUD gallery") {
+      getAllDocuments("gallery").then((data: any) => {
+        setGallery(data?.reverse());
+      });
+    } else if (isRefetch === "CRUD TravelHandbook") {
+      getAllDocuments("TravelHandbook").then((data: any) => {
+        setTravelHandbook(data?.reverse());
       });
     }
 

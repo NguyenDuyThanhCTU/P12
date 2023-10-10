@@ -2,26 +2,32 @@
 import React, { useState, useEffect } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { notification } from "antd";
-import dynamic from "next/dynamic";
 import { useStateProvider } from "@context/StateProvider";
 import { useData } from "@context/DataProviders";
 import { updateDocument } from "@config/Services/Firebase/FireStoreDB";
+import TextEditor from "../CKEditor/TextEditor";
 
-const AddPost: React.FC = () => {
-  const Editor = dynamic(() => import("../../Item/CKEditor/TextEditor"), {
-    ssr: false,
-  });
-
+const AddPost = ({ type }: any) => {
   const [editorData, setEditorData] = useState<string>("");
   const [PostSort, setPost] = useState<any>();
   const { setIsRefetch, setDropDown } = useStateProvider();
-  const { UpdateId, Posts } = useData();
+  const { UpdateId, News, Gallery, TravelHandbook } = useData();
 
   const initialEditor = "<p>Bắt đầu nhập ... </p>";
 
+  let Posts: any;
+
+  if (type === "news") {
+    Posts = News;
+  } else if (type === "gallery") {
+    Posts = Gallery;
+  } else if (type === "travelHandbook") {
+    Posts = TravelHandbook;
+  }
+
   useEffect(() => {
-    const sort = Posts.filter((item: any) => item.id === UpdateId);
-    if (sort.length > 0) {
+    const sort = Posts?.filter((item: any) => item.id === UpdateId);
+    if (sort?.length > 0) {
       setPost(sort[0]);
     }
   }, [Posts, UpdateId]);
@@ -40,13 +46,13 @@ const AddPost: React.FC = () => {
       const data = {
         ...(editorData && { content: editorData }),
       };
-      updateDocument("posts", UpdateId, data).then(() => {
+      updateDocument(type, UpdateId, data).then(() => {
         notification.success({
           message: "Thành công !",
           description: "Tải lên thành công !",
         });
         HandleDiscard();
-        setIsRefetch("CRUD posts");
+        setIsRefetch(`CRUD ${type}`);
         setDropDown("");
       });
     }
@@ -64,7 +70,7 @@ const AddPost: React.FC = () => {
             </p>
 
             <div className=" w-[60vw] mx-auto overflow-y-auto h-[500px] font-LexendDeca font-light">
-              <Editor
+              <TextEditor
                 initialValue={
                   PostSort?.content ? PostSort.content : initialEditor
                 }

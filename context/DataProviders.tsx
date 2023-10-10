@@ -16,8 +16,7 @@ export type DataContextType = {
   setSocialMedia: (social: any) => void;
   Videos: any;
   setVideos: (video: any) => void;
-  Posts: any;
-  setPosts: (post: any) => void;
+
   Accounts: any;
   setAccounts: (account: any) => void;
   UpdateId: any;
@@ -41,6 +40,12 @@ export type DataContextType = {
   setNotification: (notification: any) => void;
   CartItems: any;
   setCartItems: (cartItem: any) => void;
+  News: any;
+  setNews: (news: any) => void;
+  TravelHandbook: any;
+  setTravelHandbook: (travelhandbook: any) => void;
+  Gallery: any;
+  setGallery: (gallery: any) => void;
 };
 
 export const DataContext = createContext<DataContextType>({
@@ -54,8 +59,7 @@ export const DataContext = createContext<DataContextType>({
   setSocialMedia: () => {},
   Videos: [],
   setVideos: () => {},
-  Posts: [],
-  setPosts: () => {},
+
   Accounts: "",
   setAccounts: () => {},
   UpdateId: "",
@@ -79,6 +83,12 @@ export const DataContext = createContext<DataContextType>({
   setNotification: () => {},
   CartItems: [],
   setCartItems: () => {},
+  News: [],
+  setNews: () => {},
+  TravelHandbook: [],
+  setTravelHandbook: () => {},
+  Gallery: [],
+  setGallery: () => {},
 });
 
 export const DataProviders: React.FC<Props> = ({ children }) => {
@@ -89,7 +99,6 @@ export const DataProviders: React.FC<Props> = ({ children }) => {
   const [Slides, setSlides] = useState([]);
   const [SocialMedia, setSocialMedia] = useState("");
   const [Videos, setVideos] = useState([]);
-  const [Posts, setPosts] = useState([]);
   const [Accounts, setAccounts] = useState("");
 
   //Cart
@@ -105,10 +114,19 @@ export const DataProviders: React.FC<Props> = ({ children }) => {
   const [Notification, setNotification] = useState([]);
   const [CartItems, setCartItems] = useState([]);
   //custom
+  const [News, setNews] = useState([]);
+  const [TravelHandbook, setTravelHandbook] = useState([]);
+  const [Gallery, setGallery] = useState([]);
 
   return (
     <DataContext.Provider
       value={{
+        News,
+        setNews,
+        TravelHandbook,
+        setTravelHandbook,
+        Gallery,
+        setGallery,
         CartItems,
         setCartItems,
         Notification,
@@ -132,8 +150,7 @@ export const DataProviders: React.FC<Props> = ({ children }) => {
         setProductType,
         Accounts,
         setAccounts,
-        Posts,
-        setPosts,
+
         Videos,
         setVideos,
         SocialMedia,

@@ -1,6 +1,4 @@
-import Image from "next/image";
-
-export default function IntroduceLayout({
+export default function ContactLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -15,11 +13,6 @@ export default function IntroduceLayout({
         />
       </div>
       {children}
-      <img
-        src="https://firebasestorage.googleapis.com/v0/b/dora-a85b2.appspot.com/o/UI%2FSuperdong.jpg?alt=media&token=36616f7d-2c27-4ba1-a583-0d884935b949"
-        alt="Introduce Footer"
-        className="w-[100vw]"
-      />
     </>
   );
 }

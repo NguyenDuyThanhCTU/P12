@@ -22,10 +22,10 @@ export async function getDataByTypeProps(
 }
 
 export async function getAllDataProps(Collection: string) {
-  // const Products = await JSON.parse(
-  //   JSON.stringify(await getAllDocuments(Collection))
-  // );
-  const Data = await getAllDocuments(Collection);
+  const Data = await JSON.parse(
+    JSON.stringify(await getAllDocuments(Collection))
+  );
+  // const Data = await getAllDocuments(Collection);
 
   return Data;
 }

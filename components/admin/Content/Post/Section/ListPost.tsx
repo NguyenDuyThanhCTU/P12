@@ -16,19 +16,19 @@ interface PostData {
   daysSinceCreation: number;
 }
 
-const ListPost: React.FC = () => {
+const ListPost = ({ Data, type }: any) => {
   const { setIsRefetch, setDropDown } = useStateProvider();
   const [isOption, setIsOption] = useState<number>(0);
-  const { Posts, setUpdateId } = useData();
+  const { setUpdateId } = useData();
 
   const HandleDelete = (id: string): void => {
-    delDocument("posts", id).then(() => {
+    delDocument(type, id).then(() => {
       notification.success({
         message: "Thành công",
         description: `Bài viết đã được xóa !`,
       });
     });
-    setIsRefetch("CRUD posts");
+    setIsRefetch(`CRUD ${type}}`);
     setIsOption(0);
   };
 
@@ -42,7 +42,7 @@ const ListPost: React.FC = () => {
 
   const HandleEdit = (id: string): void => {
     setUpdateId(id);
-    setDropDown("add-post");
+    setDropDown(`add-${type}`);
     setIsOption(0);
   };
 
@@ -55,30 +55,20 @@ const ListPost: React.FC = () => {
           <p>hình ảnh</p>
         </div>
 
-        {Posts.map((data: PostData, idx: number) => {
+        {Data.map((data: PostData, idx: number) => {
           return (
             <div key={data.id} className="grid cols-4 py-4   items-center">
               <p>{idx + 1}</p>
 
               <p className="truncate ">{data.title}</p>
 
-              {data.type === "news" ? (
-                <>
-                  {" "}
-                  <Image
-                    className="  w-14 h-14 rounded-lg object-cover"
-                    src={data.image}
-                  />
-                </>
-              ) : (
-                <>
-                  {" "}
-                  <Image
-                    className="  w-14 h-14 rounded-lg object-cover"
-                    src="https://firebasestorage.googleapis.com/v0/b/noithatdaiphattravinh.appspot.com/o/logoSaleNoti.png?alt=media&token=63c66b17-aa49-4c45-ab51-9661eee6ca2f"
-                  />
-                </>
-              )}
+              <>
+                {" "}
+                <Image
+                  className="  w-14 h-14 rounded-lg object-cover"
+                  src={data.image}
+                />
+              </>
 
               <div className="flex gap-5 items-center">
                 <div>

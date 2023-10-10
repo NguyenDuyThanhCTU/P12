@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { AiOutlineCloudUpload } from "react-icons/ai";
-import { notification } from "antd";
+import { Select, Space, notification } from "antd";
 
 import Input from "../../../Item/Input";
 import { useStateProvider } from "@context/StateProvider";
@@ -11,17 +11,17 @@ import {
   uploadImage,
 } from "@components/items/server-items/Handle";
 import { addDocument } from "@config/Services/Firebase/FireStoreDB";
-import { TypePostItems } from "@assets/item";
 
 type InputChangeEvent = React.ChangeEvent<HTMLInputElement>;
 
-const UploadPost: React.FC = () => {
+const UploadPost = ({ Type, typeItems }: any) => {
   const [Title, setTitle] = useState<string>("");
   const [imageUrl, setImageUrl] = useState<string>("");
   const [type, setType] = useState<string>("news");
   const [url, setUrl] = useState<string>("");
   const { setDropDown, setIsRefetch } = useStateProvider();
   const { setUpdateId } = useData();
+  const { Option } = Select;
 
   const HandleUploadImage = (e: InputChangeEvent, locate: string): void => {
     uploadImage(e, locate).then((data: any) => {
@@ -59,15 +59,15 @@ const UploadPost: React.FC = () => {
         url: url,
         content: "",
       };
-      addDocument("posts", data).then((data) => {
+      addDocument(Type, data).then((data) => {
         notification.success({
           message: "Thành công!",
           description: `Thông tin đã được CẬP NHẬT !`,
         });
 
         setUpdateId(data);
-        setDropDown("add-post");
-        setIsRefetch("CRUD posts");
+        setDropDown(`add-${Type}`);
+        setIsRefetch(`CRUD ${Type}`);
         HandleDiscard();
       });
     }
@@ -104,20 +104,19 @@ const UploadPost: React.FC = () => {
             />
             <div className="flex flex-col gap-2 mb-2">
               <label className="text-md font-medium ">Loại bài viết:</label>
-              <select
-                className="outline-none lg:w-650 border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer"
-                onChange={(e) => setType(e.target.value)}
+
+              <Select
+                style={{ width: "100%" }}
+                placeholder="Chọn loại cho bài viết"
+                onChange={setType}
+                optionLabelProp="label"
               >
-                {TypePostItems.map((item, idx) => (
-                  <option
-                    key={idx}
-                    className=" outline-none capitalize bg-white text-gray-700 text-md p-2 hover:bg-slate-300"
-                    value={item.value}
-                  >
-                    {item.label}
-                  </option>
+                {typeItems.map((item: any, idx: any) => (
+                  <Option key={idx} value={item.value} label={item.label}>
+                    <Space>{item.label}</Space>
+                  </Option>
                 ))}
-              </select>
+              </Select>
             </div>
             {type !== "policy" && (
               <>

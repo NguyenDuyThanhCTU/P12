@@ -252,6 +252,10 @@ export const mainHeaderItems = [
     name: "Giới thiệu",
     link: "gioi-thieu",
   },
+  {
+    name: "Tin tức",
+    link: "tin-tuc",
+  },
 
   {
     name: "Cẩm nang du lịch",
@@ -323,22 +327,44 @@ export const ToolsTipsSocialMediaItems = [
 
 /*<-------------------------------------------------------------------------------------------------------------------- CUSTOM --------------------------------------------------------------------------------------------------------------------> */
 
-export const TypePostItems = [
+export const newsTypeItems = [
   {
-    label: "Tin tức & Sự kiện",
-    value: "news",
+    label: "Công ty",
+    value: "cong-ty",
   },
   {
-    label: "Hợp tác",
-    value: "cooperate",
+    label: "Sự kiện",
+    value: "su-kien",
   },
   {
-    label: "Quy trình sản xuất",
-    value: "process",
+    label: "Khuyến mãi",
+    value: "khuyen-mai",
+  },
+];
+
+export const galleryTypeItems = [
+  {
+    label: "Nội - ngoại thất tàu",
+    value: "noi-ngoai-that-tau",
   },
   {
-    label: "Chính sách",
-    value: "policy",
+    label: "Đội ngũ nhân viên",
+    value: "doi-ngu-nhan-vien",
+  },
+];
+
+export const TravelHandbookTypeItems = [
+  {
+    label: "Khách sạn",
+    value: "khach-san",
+  },
+  {
+    label: "Nhà hàng",
+    value: "nha-hang",
+  },
+  {
+    label: "Thông tin cần biết",
+    value: "thong-tin-can-biet",
   },
 ];
 

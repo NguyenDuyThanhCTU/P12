@@ -1,4 +1,5 @@
-import NavbarIntroduction from "@components/client/Introduce/Navbar";
+import { IntroduceItems } from "@assets/item";
+import NavbarIntroduction from "@components/items/client-items/Navbar";
 import { getDataByTypeProps } from "@components/lib/get-data";
 import React from "react";
 
@@ -9,12 +10,16 @@ const IntroducePage = async ({ params }: { params: { slug: string } }) => {
     params.slug
   );
   console.log(params.slug);
-  const markup = { __html: IntroduceData[0].content };
-  const title = IntroduceData[0].title;
-  const topic = IntroduceData[0].type;
+  const markup: any = { __html: IntroduceData[0]?.content };
+  const title: any = IntroduceData[0]?.title;
+  const topic: any = IntroduceData[0]?.type;
   return (
     <>
-      <NavbarIntroduction id={params.slug} />
+      <NavbarIntroduction
+        id={params.slug}
+        url="gioi-thieu"
+        items={IntroduceItems}
+      />
       <div
         className="my-16 d:w-[1300px] d:mx-auto p:w-auto p:mx-2"
         id="introduction"

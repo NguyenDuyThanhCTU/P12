@@ -23,8 +23,12 @@ const AdminDropDown = () => {
         <AddType />
       ) : isDropDown === "add-children-type" ? (
         <AddChildrenType />
-      ) : isDropDown === "add-post" ? (
-        <AddPost />
+      ) : isDropDown === "add-news" ? (
+        <AddPost type="news" />
+      ) : isDropDown === "add-gallery" ? (
+        <AddPost type="gallery" />
+      ) : isDropDown === "add-TravelHandbook" ? (
+        <AddPost type="TravelHandbook" />
       ) : isDropDown === "add-product" ? (
         <AddProduct />
       ) : isDropDown === "add-branch" ? (
