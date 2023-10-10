@@ -9,7 +9,7 @@ export default function ProductsLayout({
 }) {
   return (
     <>
-      <div className="p:w-auto d:w-[1300px] mx-auto flex gap-5 d:flex-row p:flex-col p:py-5">
+      <div className="p:w-auto d:w-[1300px] d:mx-auto  p:mx-2 flex gap-5 d:flex-row p:flex-col p:py-5">
         <Suspense
           fallback={
             <div>

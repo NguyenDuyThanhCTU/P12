@@ -78,7 +78,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-5 py-5 font-LexendDeca">
+    <div className="grid p:grid-cols-1 d:grid-cols-3 gap-5 py-5 font-LexendDeca">
       <div className="flex flex-col">
         <h2 className="py-5 text-[20px]  font-semibold">
           Chúng tôi luôn lắng nghe bạn!
@@ -106,11 +106,11 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 col-span-2 ">
+      <div className="grid grid-cols-2 col-span-2 gap-2">
         {Branches.map((item: any, idx: number) => (
           <div className="flex flex-col" key={idx}>
-            <h2 className="font-bold">{item.name} </h2>
-            <div className="hmax flex flex-col font-LexendDeca font-light text-[0.7vw] p-3">
+            <h2 className="font-bold text-[18px]">{item.name} </h2>
+            <div className="hmax flex flex-col font-LexendDeca font-light  p-3">
               <p>{item.address}</p>
               <p>SĐT: {item.email}</p>
               <p>Email: {item.email}</p>

@@ -5,7 +5,7 @@ import React from "react";
 const DepartureSchedule = () => {
   const { DepartureSchedule } = useData();
   return (
-    <div className="grid grid-cols-2 gap-10">
+    <div className="grid p:grid-cols-1 d:grid-cols-2 gap-10">
       {DepartureSchedule.map((items: any, idx: number) => {
         const Transshipment: any = { __html: items.Transshipment };
         const Notes: any = { __html: items.Notes };

@@ -3,7 +3,7 @@ import React from "react";
 
 const FarePage = () => {
   return (
-    <div className="w-[1300px] mx-auto">
+    <div className="d:w-[1300px] d:mx-auto p:w-auto p:mx-2">
       <Fare />
     </div>
   );

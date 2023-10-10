@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { notification } from "antd";
+import { DatePicker, Radio, Select, Space, notification } from "antd";
+import { useData } from "@context/DataProviders";
+import moment from "moment";
 
 const Cart = () => {
   const [name, setName] = useState("");
@@ -11,7 +13,13 @@ const Cart = () => {
   const [street, setStreet] = useState("");
   const [address, setAddress] = useState("");
   const [description, setDescription] = useState("");
+  const [departureSchedule, setDepartureSchedule] = useState<any>([]);
+  const [start, setStart] = useState<any>();
+  const [departureType, setDepartureType] = useState<any>(1);
 
+  const [passenger, setPassenger] = useState<any>("");
+  const { Option } = Select;
+  const { DepartureSchedule } = useData();
   const HandleDiscard = () => {
     setAddress("");
     setStreet("");
@@ -25,7 +33,8 @@ const Cart = () => {
 
   const HandleSubmit = async (e: any) => {
     e.preventDefault();
-    if (!phone || !name || !email || !address || !district || !city) {
+
+    if (!phone) {
       notification["warning"]({
         message: "Thao tác KHÔNG thành công !",
         description: `
@@ -33,6 +42,9 @@ const Cart = () => {
       });
     } else {
       const currentTime = new Date();
+      const formattedStartDate: any = start
+        ? moment(start.$d).format("YYYY-MM-DD")
+        : null;
 
       const dataFields = [
         { title: "Họ Tên", value: name },
@@ -40,16 +52,12 @@ const Cart = () => {
         { title: "SĐT", value: phone },
         { title: "ĐC", value: `${address} ${street}, ${district}, ${city}` },
         { title: "Yêu Cầu Khác", value: description },
-        { title: "Tổng số lượng sản phẩm", value: ` Sản phẩm` },
-        {
-          title: "Chi tiết hóa đơn",
-          value: `
-        `,
-        },
-        {
-          title: "Tổng Giá trị hóa đơn",
-          value: ` VNĐ`,
-        },
+
+        { title: "Tuyến", value: departureSchedule },
+        { title: "Ngày khởi hành", value: formattedStartDate },
+        { title: "Loại tuyến", value: departureType },
+        { title: "Số lượng hành khách", value: passenger },
+
         { title: "Thời gian đặt", value: currentTime },
       ];
 
@@ -93,17 +101,68 @@ const Cart = () => {
       <div className="border shadow-xl">
         <div className="p-2">
           <h3 className="text-mainblue uppercase text-[18px] font-semibold border-b w-full pb-2">
-            Thông tin giao hàng
+            Thông tin chuyến đi
           </h3>
-          <form onSubmit={HandleSubmit}>
-            <div className="flex gap-2 ">
-              <div>
-                <label className="font-semibold ">Tàu</label>
+          <form onSubmit={HandleSubmit} className="p-5">
+            <div className="flex  flex-col gap-5">
+              <div className="flex gap-5">
+                <div className="flex flex-col gap-2 w-[190px]">
+                  <label className="text-md font-medium ">Tuyến</label>
+                  <Select
+                    style={{ width: "100%" }}
+                    placeholder="Chọn loại tuyến đường"
+                    onChange={setDepartureSchedule}
+                    optionLabelProp="label"
+                  >
+                    {DepartureSchedule?.map((item: any, idx: any) => (
+                      <Option value={`${item.start} - ${item.end}`} key={idx}>
+                        <Space>
+                          {item.start} - {item.end}{" "}
+                        </Space>
+                      </Option>
+                    ))}
+                  </Select>
+                </div>
+                <div className="flex flex-col gap-2 w-[190px]">
+                  <label className="text-md font-medium ">Ngày khởi hành</label>
+                  <DatePicker className="w-full" onChange={setStart} />
+
+                  {/* <Select
+                    style={{ width: "100%" }}
+                    placeholder="Chọn thời gian khởi hành"
+                    onChange={setDepartureSchedule}
+                    optionLabelProp="label"
+                  >
+                    {DepartureSchedule?.map((item: any, idx: any) => (
+                      <Option value={`${item.start} - ${item.end}`} key={idx}>
+                        <Space>
+                          {item.start} - {item.end}{" "}
+                        </Space>
+                      </Option>
+                    ))}
+                  </Select> */}
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="font-semibold ">Số lượng hành khách</label>
 
                 <input
+                  value={passenger}
+                  onChange={(e) => setPassenger(e.target.value)}
                   type="text"
                   className="p-2 border border-mainorange outline-none text-black"
                 />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="font-semibold ">Loại tuyến</label>
+
+                <Radio.Group
+                  onChange={(e) => setDepartureType(e.target.value)}
+                  value={departureType}
+                >
+                  <Radio value={`Một chiều`}> Một chiều</Radio>
+                  <Radio value={`Khứ hồi`}>Khứ hồi</Radio>
+                </Radio.Group>
               </div>
             </div>
           </form>
@@ -112,9 +171,9 @@ const Cart = () => {
       <div className="border shadow-xl">
         <div className="p-2">
           <h3 className="text-mainblue uppercase text-[18px] font-semibold border-b w-full pb-2">
-            Thông tin giao hàng
+            Thông tin người đặt vé
           </h3>
-          <form onSubmit={HandleSubmit}>
+          <form onSubmit={HandleSubmit} className="p-5">
             <div className="flex gap-2 flex-col ">
               <div className="flex flex-col gap-2 ">
                 <div className="flex flex-col gap-2">

@@ -6,7 +6,7 @@ import React from "react";
 const Posts = ({ Data, topic, url }: any) => {
   return (
     <div>
-      <div className="w-[1300px] mx-auto">
+      <div className="d:w-[1300px] d:mx-auto p:w-auto p:mx-2">
         <div className="flex flex-col">
           <div>
             <div className="uppercase font-bold text-[1.5rem] ">
@@ -18,7 +18,7 @@ const Posts = ({ Data, topic, url }: any) => {
               </Link>
             </div>
           </div>
-          <div className="grid grid-cols-3 py-5 ">
+          <div className="grid p:grid-cols-2 d:grid-cols-3 py-5 gap-5 ">
             {Data.map((item: any, idx: number) => (
               <div key={idx}>
                 <PostCart

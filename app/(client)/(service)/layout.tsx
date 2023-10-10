@@ -14,7 +14,7 @@ export default function IntroduceLayout({
         alt="Introduce Header"
         className="w-[100vw]"
       />
-      <div className="w-[1300px] mx-auto">
+      <div className="d: d:mx-auto p:w-auto p:mx-2">
         <NavbarIntroduction id="/" url="" items={ServiceTypeItems} />
       </div>
       <div> {children}</div>

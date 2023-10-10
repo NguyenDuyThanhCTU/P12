@@ -272,7 +272,7 @@ export const mainHeaderItems = [
 export const subHeaderItems = [
   {
     name: "Dịch vụ",
-    link: "dich-vu",
+    link: "dat-ve",
   },
   {
     name: "Giá vé",
@@ -280,7 +280,7 @@ export const subHeaderItems = [
   },
   {
     name: "Mua vé trực tuyến",
-    link: "mua-ve-truc-tuyen",
+    link: "dat-ve",
   },
   {
     name: "Quan hệ cổ đông",

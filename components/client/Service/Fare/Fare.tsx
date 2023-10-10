@@ -39,7 +39,7 @@ const Fare = () => {
   }, [Fare]);
   return (
     <>
-      <div className="grid grid-cols-2 gap-20">
+      <div className="grid p:grid-cols-1 d:grid-cols-2 gap-20">
         <div>
           <div className="uppercase font-bold text-[1.5rem] ">
             <div className="hover:text-mainblue before:w-[50px] before:h-[1px] before:inline-block  before:bg-black before:mr-2 ">

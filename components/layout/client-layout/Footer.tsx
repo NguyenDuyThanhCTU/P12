@@ -30,13 +30,13 @@ const Footer = () => {
 
   return (
     <div className="bg-mainblue" id="footer">
-      <div className=" w-[65vw] mx-auto flex text-mainwhite gap-10 py-10">
+      <div className="p:w-auto d:w-[65vw] p:mx-2 d:mx-auto flex text-mainwhite gap-10 py-10">
         <div className="flex flex-col gap-5 ">
-          <div className="flex flex-col gap-1 text-[0.7vw]">
+          <div className="flex flex-col gap-1 ">
             {PolicyItems.map((items: any, idx: number) => (
               <Link
                 key={idx}
-                className="hover:underline w-max"
+                className="hover:underline w-max text-[14px]"
                 href={items.url}
               >
                 {items.title}
@@ -44,8 +44,8 @@ const Footer = () => {
             ))}
           </div>
           <div>
-            <h2 className="text-[1.5vw]">Follow us</h2>
-            <div className="flex flex-col gap-1 text-[0.7vw]">
+            <h2 className="text-[18px]">Follow us</h2>
+            <div className="flex flex-col gap-1 ">
               {SocialMediaItems.map((items: any, idx: number) => {
                 return (
                   <div
@@ -53,7 +53,7 @@ const Footer = () => {
                     onClick={() =>
                       window.open(`https://${items.url}`, "_blank")
                     }
-                    className="hover:underline w-max"
+                    className="hover:underline w-max text-[14px]"
                   >
                     {items.name}
                   </div>
@@ -63,8 +63,8 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-full">
-          <h2 className="text-[1.5vw]">Hệ thống phòng vé</h2>
-          <div className="grid grid-cols-3 gap-5 mt-5">
+          <h2 className="text-[20px]">Hệ thống phòng vé</h2>
+          <div className="grid p:grid-cols-1 d:grid-cols-3 gap-5 mt-5">
             {Branches.map((items: any, idx: number) => (
               <div className="flex flex-col" key={idx}>
                 <div
@@ -89,7 +89,7 @@ const Footer = () => {
                       : "h-0 overflow-hidden"
                   } duration-300 `}
                 >
-                  <div className="hmax flex flex-col font-LexendDeca font-light text-[0.7vw] p-3">
+                  <div className="hmax flex flex-col font-LexendDeca font-light  p-3">
                     <p>{items.address}</p>
                     <p>SĐT: {items.email}</p>
                     <p>Email: {items.email}</p>
