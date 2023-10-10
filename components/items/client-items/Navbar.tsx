@@ -9,7 +9,11 @@ const NavbarIntroduction = ({ id, url, items }: any) => {
       <div className="w-[1300px] mx-auto flex  gap-8 pb-5 border-b border-black textgray  text-gray-700 hover:text-black duration-300 font-LexendDeca font-light">
         {items.map((item: any, idx: number) => (
           <Link
-            href={`/${url}/${item.value}`}
+            href={`${
+              !url || id === "khuyen-mai"
+                ? `/${item.value}`
+                : `/${url}/${item.value}`
+            }`}
             key={idx}
             className={`${
               item.value === id && "border-b border-b-black w-max "

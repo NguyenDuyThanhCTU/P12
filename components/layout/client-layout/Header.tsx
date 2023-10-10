@@ -104,7 +104,7 @@ const Header = () => {
                     {subHeaderItems.map((items: any, idx: any) => (
                       <Link
                         className="font-bold uppercase hover:text-mainorange"
-                        href={items.link}
+                        href={`/${items.link}`}
                         key={idx}
                       >
                         {items.name}

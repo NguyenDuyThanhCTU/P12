@@ -3,6 +3,7 @@ import Footer from "@components/layout/client-layout/Footer";
 import Header from "@components/layout/client-layout/Header";
 import Hotline from "@components/layout/client-layout/Hotline";
 import OnTop from "@components/layout/client-layout/OnTop";
+import Partner from "@components/layout/client-layout/Partner";
 import React from "react";
 
 type ClientLayoutProps = {
@@ -14,7 +15,7 @@ const layout: React.FC<ClientLayoutProps> = ({ children }) => {
     <>
       <Header />
       <div className="">{children}</div>
-
+      <Partner />
       <Footer />
       <div className="relative z-50">
         <OnTop />

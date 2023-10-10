@@ -29,6 +29,8 @@ const Fetch: React.FC = () => {
 
     setSale,
     setNotification,
+    setFare,
+    setDepartureSchedule,
     // custom
   } = useData();
 
@@ -80,14 +82,22 @@ const Fetch: React.FC = () => {
     getAllDocuments("videos").then((data: any) => {
       setVideos(data?.reverse());
     });
-    getAllDocuments("news").then((data: any) => {
-      setNews(data?.reverse());
+    setTimeout(() => {
+      getProducts("news").then((data: any) => {
+        setNews(data?.reverse());
+      });
+      getProducts("gallery").then((data: any) => {
+        setGallery(data?.reverse());
+      });
+      getProducts("TravelHandbook").then((data: any) => {
+        setTravelHandbook(data?.reverse());
+      });
+    }, 500);
+    getAllDocuments("fare").then((data: any) => {
+      setFare(data?.reverse());
     });
-    getAllDocuments("gallery").then((data: any) => {
-      setGallery(data?.reverse());
-    });
-    getAllDocuments("TravelHandbook").then((data: any) => {
-      setTravelHandbook(data?.reverse());
+    getAllDocuments("departureschedule").then((data: any) => {
+      setDepartureSchedule(data?.reverse());
     });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -147,18 +157,33 @@ const Fetch: React.FC = () => {
     } else if (isRefetch === "CRUD products") {
       getProducts("products").then((data: any) => {
         setProducts(data);
+        setIsRefetch("done");
       });
     } else if (isRefetch === "CRUD news") {
       getAllDocuments("news").then((data: any) => {
         setNews(data?.reverse());
+        setIsRefetch("done");
       });
     } else if (isRefetch === "CRUD gallery") {
       getAllDocuments("gallery").then((data: any) => {
         setGallery(data?.reverse());
+        setIsRefetch("done");
       });
     } else if (isRefetch === "CRUD TravelHandbook") {
       getAllDocuments("TravelHandbook").then((data: any) => {
         setTravelHandbook(data?.reverse());
+        setIsRefetch("done");
+      });
+    } else if (isRefetch === "CRUD fare") {
+      console.log("refetch");
+      getAllDocuments("fare").then((data: any) => {
+        setFare(data?.reverse());
+        setIsRefetch("done");
+      });
+    } else if (isRefetch === "CRUD departureschedule") {
+      getAllDocuments("departureschedule").then((data: any) => {
+        setDepartureSchedule(data?.reverse());
+        setIsRefetch("done");
       });
     }
 

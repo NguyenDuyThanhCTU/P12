@@ -4,9 +4,7 @@ import Contact from "./Webconfig/Contact/Contact";
 import Trademark from "./Webconfig/Trademark/Trademark";
 import SocialMedia from "./SocialMedia/SocialMedia";
 import Slide from "./Slide/Slide";
-import Video from "./Video/Video";
 
-import Product from "./Service/Product/Product";
 import Order from "./Service/Order/Order";
 import Branch from "./Service/Branch/Branch";
 import Introduce from "./Service/Introduce/introduce";
@@ -14,6 +12,8 @@ import Account from "./Account/Account";
 import Sale from "./Sale/Sale";
 import { useStateProvider } from "@context/StateProvider";
 import OverallPosts from "./Post/OverallPosts";
+import OverallVideo from "./Fare/OverallVideo";
+import DepartureSchedule from "./Service/Product/DepartureSchedule";
 
 const Content: React.FC = () => {
   const { isSelected } = useStateProvider();
@@ -43,7 +43,7 @@ const Content: React.FC = () => {
         ) : isSelected === 4 ? (
           <>
             <div className="p-5 d:px-10 p:px-2 flex justify-start gap-10">
-              <Video />
+              <OverallVideo />
             </div>
           </>
         ) : isSelected === 5 ? (
@@ -62,28 +62,31 @@ const Content: React.FC = () => {
         ) : isSelected === 7 ? (
           <>
             <div className="p-5 d:px-10 p:px-2 flex justify-start gap-10">
-              <Product />
+              <DepartureSchedule />
             </div>
           </>
         ) : isSelected === 8 ? (
           <>
             <div className="p-5 d:px-10 p:px-2 flex justify-start gap-10">
               <>
-                <Sale />
+                <Branch />
+                {/* <Sale />
+                
+                */}
               </>
             </div>
           </>
         ) : isSelected === 9 ? (
           <>
             <div className="p-5 d:px-10 p:px-2 flex justify-start gap-10">
-              <Order />
+              {/* <Order /> */}
               <></>
             </div>
           </>
         ) : isSelected === 10 ? (
           <>
             <div className="p-5 d:px-10 p:px-2 flex justify-start gap-10">
-              <Branch />
+              {/* <Branch /> */}
               <></>
             </div>
           </>

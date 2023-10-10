@@ -8,7 +8,7 @@ import {
   BsFillSendCheckFill,
   BsFillSendXFill,
 } from "react-icons/bs";
-import { HiOutlineUserGroup } from "react-icons/hi";
+import { HiOutlineTicket, HiOutlineUserGroup } from "react-icons/hi";
 import {
   AiFillInstagram,
   AiOutlineProfile,
@@ -75,6 +75,7 @@ export const IconMapping: IconMappingType = {
   TbCubeSend: TbCubeSend,
   BsFillSendXFill: BsFillSendXFill,
   CiViewList: CiViewList,
+  HiOutlineTicket: HiOutlineTicket,
 };
 
 export const ProductSidebarAdmin = [
@@ -83,17 +84,10 @@ export const ProductSidebarAdmin = [
     icon: "AiOutlineSlack",
   },
   {
-    name: "Sản phẩm",
+    name: "Lịch chạy tàu",
     icon: "FaFirstOrderAlt",
   },
-  {
-    name: "Sale",
-    icon: "IoFlashOutline",
-  },
-  {
-    name: "Đơn hàng",
-    icon: "AiOutlineUnorderedList",
-  },
+
   {
     name: "Chi nhánh phòng vé",
     icon: "CgListTree",
@@ -118,8 +112,8 @@ export const WebsiteSidebarAdmin = [
     icon: "MdOutlinePostAdd",
   },
   {
-    name: "Video",
-    icon: "BiSlideshow",
+    name: "Giá vé",
+    icon: "HiOutlineTicket",
   },
   {
     name: "Tài khoản",
@@ -294,7 +288,7 @@ export const subHeaderItems = [
   },
   {
     name: "Khuyến mãi",
-    link: "khuyen-mai",
+    link: "tin-tuc/khuyen-mai",
   },
 ];
 
@@ -326,6 +320,25 @@ export const ToolsTipsSocialMediaItems = [
 ];
 
 /*<-------------------------------------------------------------------------------------------------------------------- CUSTOM --------------------------------------------------------------------------------------------------------------------> */
+
+export const ServiceTypeItems = [
+  {
+    label: "Đặt vé",
+    value: "dat-ve",
+  },
+  {
+    label: "Lịch tàu chạy",
+    value: "lich-tau-chay",
+  },
+  {
+    label: "Giá vé",
+    value: "gia-ve",
+  },
+  {
+    label: "Dịch vụ khác",
+    value: "dich-vu-khac",
+  },
+];
 
 export const newsTypeItems = [
   {
@@ -465,6 +478,39 @@ export const PolicyItems = [
     url: "quy-dinh-hoan-doi-ve-online",
     type: "policy",
     image: "",
+  },
+];
+
+export const PartnerItems = [
+  {
+    image:
+      "https://superdong.com.vn/wp-content/uploads/2021/03/Thien_Viet_Travel.jpg",
+  },
+  {
+    image:
+      "https://superdong.com.vn/wp-content/uploads/2021/03/Vietnam_Tourist.jpg",
+  },
+  {
+    image:
+      "https://superdong.com.vn/wp-content/uploads/2021/03/Golden_Beach.jpg",
+  },
+  {
+    image: "https://superdong.com.vn/wp-content/uploads/2021/03/Puolo_Trip.jpg",
+  },
+  {
+    image: "https://superdong.com.vn/wp-content/uploads/2019/05/Untitled-6.jpg",
+  },
+  {
+    image:
+      "https://superdong.com.vn/wp-content/uploads/2019/10/logo-500x320-01.jpg",
+  },
+  {
+    image:
+      "https://superdong.com.vn/wp-content/uploads/2021/03/Dao_Ngoc_Travel.jpg",
+  },
+  {
+    image:
+      "https://superdong.com.vn/wp-content/uploads/2021/03/Con_Son_Land.jpg",
   },
 ];
 

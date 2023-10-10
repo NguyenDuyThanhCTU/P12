@@ -46,6 +46,10 @@ export type DataContextType = {
   setTravelHandbook: (travelhandbook: any) => void;
   Gallery: any;
   setGallery: (gallery: any) => void;
+  Fare: any;
+  setFare: (fare: any) => void;
+  DepartureSchedule: any;
+  setDepartureSchedule: (departureSchedule: any) => void;
 };
 
 export const DataContext = createContext<DataContextType>({
@@ -89,6 +93,10 @@ export const DataContext = createContext<DataContextType>({
   setTravelHandbook: () => {},
   Gallery: [],
   setGallery: () => {},
+  Fare: [],
+  setFare: () => {},
+  DepartureSchedule: [],
+  setDepartureSchedule: () => {},
 });
 
 export const DataProviders: React.FC<Props> = ({ children }) => {
@@ -117,10 +125,15 @@ export const DataProviders: React.FC<Props> = ({ children }) => {
   const [News, setNews] = useState([]);
   const [TravelHandbook, setTravelHandbook] = useState([]);
   const [Gallery, setGallery] = useState([]);
-
+  const [Fare, setFare] = useState([]);
+  const [DepartureSchedule, setDepartureSchedule] = useState([]);
   return (
     <DataContext.Provider
       value={{
+        DepartureSchedule,
+        setDepartureSchedule,
+        Fare,
+        setFare,
         News,
         setNews,
         TravelHandbook,
