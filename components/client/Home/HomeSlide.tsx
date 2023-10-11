@@ -1,33 +1,41 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
-import Head from "next/head";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Autoplay } from "swiper/modules";
+import { useData } from "@context/DataProviders";
 
-export default function Home() {
-  const editorRef = useRef<any>();
-  const [editorLoaded, setEditorLoaded] = useState(false);
-  const { CKEditor, ClassicEditor }: any = editorRef.current || {};
-
-  useEffect(() => {
-    editorRef.current = {
-      CKEditor: require("@ckeditor/ckeditor5-react").CKEditor, // v3+
-      ClassicEditor: require("@ckeditor/ckeditor5-build-classic"),
-    };
-    setEditorLoaded(true);
-  }, []);
-
+const HomeSlide = () => {
+  const { Slides } = useData();
   return (
-    <div className="  ">
-      <Head>
-        <title>Ckeditor 5</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <h1>Ckeditor5 Nextjs</h1>
-      {editorLoaded ? (
-        <CKEditor className="mt-3 wrap-ckeditor" editor={ClassicEditor} />
-      ) : (
-        "loading..."
-      )}
+    <div>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        slidesPerView={1}
+        slidesPerGroup={1}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay]}
+        className="mySwiper"
+        loop={true}
+      >
+        {Slides?.map((items: any, idx: number) => (
+          <div key={idx} className="">
+            <SwiperSlide>
+              <div className="w-full max-h-[850px]">
+                <img src={items.image} alt="slide" className="w-full h-full" />
+              </div>
+            </SwiperSlide>
+          </div>
+        ))}
+      </Swiper>
     </div>
   );
-}
+};
+
+export default HomeSlide;

@@ -76,25 +76,33 @@ const Fare = () => {
                     isOption === idx + 1 ? "   h-max" : "h-0 overflow-hidden"
                   } duration-300 text-[14px] `}
                 >
-                  <div className="flex justify-between py-5 border-b border-black">
-                    <p>Người lớn</p>
-                    <p>{items.Adult}VNĐ</p>
-                  </div>
-                  <div className="flex justify-between py-5 border-b border-black">
-                    <p>
-                      Người cao tuổi (từ 60 tuổi trở lên, áp dụng cho công dân
-                      VN)
-                    </p>
-                    <p>{items.Elderly}VNĐ</p>
-                  </div>
-                  <div className="flex justify-between py-5 border-b border-black">
-                    <p>Người khuyết tật (áp dụng cho công dân VN)</p>
-                    <p>{items.DisablePeople}VNĐ</p>
-                  </div>
-                  <div className="flex justify-between py-5 border-b border-black">
-                    <p>Trẻ em (Từ 6-11 tuổi tính theo năm sinh)</p>
-                    <p>{items.Children}VNĐ</p>
-                  </div>
+                  {items.Adult && (
+                    <div className="flex justify-between py-5 border-b border-black">
+                      <p>Người lớn</p>
+                      <p>{items.Adult}VNĐ</p>
+                    </div>
+                  )}
+                  {items.Elderly && (
+                    <div className="flex justify-between py-5 border-b border-black">
+                      <p>
+                        Người cao tuổi (từ 60 tuổi trở lên, áp dụng cho công dân
+                        VN)
+                      </p>
+                      <p>{items.Elderly}VNĐ</p>
+                    </div>
+                  )}
+                  {items.DisablePeople && (
+                    <div className="flex justify-between py-5 border-b border-black">
+                      <p>Người khuyết tật (áp dụng cho công dân VN)</p>
+                      <p>{items.DisablePeople}VNĐ</p>
+                    </div>
+                  )}
+                  {items.Children && (
+                    <div className="flex justify-between py-5 border-b border-black">
+                      <p>Trẻ em (Từ 6-11 tuổi tính theo năm sinh)</p>
+                      <p>{items.Children}VNĐ</p>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -134,30 +142,36 @@ const Fare = () => {
                 </div>
                 <div
                   className={`${
-                    isOptionRoro === idx + 1
-                      ? "   h-max"
-                      : "h-0 overflow-hidden"
+                    isOption === idx + 1 ? "   h-max" : "h-0 overflow-hidden"
                   } duration-300 text-[14px] `}
                 >
-                  <div className="flex justify-between py-5 border-b border-black">
-                    <p>Người lớn</p>
-                    <p>{items.Adult}VNĐ</p>
-                  </div>
-                  <div className="flex justify-between py-5 border-b border-black">
-                    <p>
-                      Người cao tuổi (từ 60 tuổi trở lên, áp dụng cho công dân
-                      VN)
-                    </p>
-                    <p>{items.Elderly}VNĐ</p>
-                  </div>
-                  <div className="flex justify-between py-5 border-b border-black">
-                    <p>Người khuyết tật (áp dụng cho công dân VN)</p>
-                    <p>{items.DisablePeople}VNĐ</p>
-                  </div>
-                  <div className="flex justify-between py-5 border-b border-black">
-                    <p>Trẻ em (Từ 6-11 tuổi tính theo năm sinh)</p>
-                    <p>{items.Children}VNĐ</p>
-                  </div>
+                  {items.Adult && (
+                    <div className="flex justify-between py-5 border-b border-black">
+                      <p>Người lớn</p>
+                      <p>{items.Adult}VNĐ</p>
+                    </div>
+                  )}
+                  {items.Elderly && (
+                    <div className="flex justify-between py-5 border-b border-black">
+                      <p>
+                        Người cao tuổi (từ 60 tuổi trở lên, áp dụng cho công dân
+                        VN)
+                      </p>
+                      <p>{items.Elderly}VNĐ</p>
+                    </div>
+                  )}
+                  {items.DisablePeople && (
+                    <div className="flex justify-between py-5 border-b border-black">
+                      <p>Người khuyết tật (áp dụng cho công dân VN)</p>
+                      <p>{items.DisablePeople}VNĐ</p>
+                    </div>
+                  )}
+                  {items.Children && (
+                    <div className="flex justify-between py-5 border-b border-black">
+                      <p>Trẻ em (Từ 6-11 tuổi tính theo năm sinh)</p>
+                      <p>{items.Children}VNĐ</p>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

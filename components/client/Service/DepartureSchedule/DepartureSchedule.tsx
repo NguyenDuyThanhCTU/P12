@@ -41,61 +41,74 @@ const DepartureSchedule = () => {
                   </div>
                 </div>
               </div>
-              <div className="grid  grid-cols-4 border-b  border-mainorange items-center text-[14px]">
-                <div className="ml-3">Giờ cập bến</div>
-                <div className="col-span-3 grid grid-cols-2 ">
-                  <div className="py-3">{items.DockedTime}</div>
-                  <div className="bg-gray-200 py-3 pl-3">
-                    {items.DockedTime1}
+              {(items.DockedTime || items.DockedTime1) && (
+                <div className="grid  grid-cols-4 border-b  border-mainorange items-center text-[14px]">
+                  <div className="ml-3">Giờ cập bến</div>
+                  <div className="col-span-3 grid grid-cols-2 ">
+                    <div className="py-3">{items.DockedTime}</div>
+                    <div className="bg-gray-200 py-3 pl-3">
+                      {items.DockedTime1}
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="grid  grid-cols-4 border-b  border-mainorange items-center text-[14px]">
-                <div className="ml-3">Tàu</div>
-                <div className="col-span-3 grid grid-cols-2 ">
-                  <div className="py-3">{items.FastFerry}</div>
-                  <div className="bg-gray-200 py-3 pl-3">
-                    {items.FastFerry1}
+              )}
+              {(items.FastFerry || items.FastFerry1) && (
+                <div className="grid  grid-cols-4 border-b  border-mainorange items-center text-[14px]">
+                  <div className="ml-3">Tàu</div>
+                  <div className="col-span-3 grid grid-cols-2 ">
+                    <div className="py-3">{items.FastFerry}</div>
+                    <div className="bg-gray-200 py-3 pl-3">
+                      {items.FastFerry1}
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="grid  grid-cols-4 border-b  border-mainorange items-center text-[14px]">
-                <div className="ml-3">Tải trọng</div>
-                <div className="col-span-3 grid grid-cols-2 ">
-                  <div className="py-3">{items.Weight}</div>
-                  <div className="bg-gray-200 py-3 pl-3">{items.Weight1}</div>
+              )}
+              {(items.Weight || items.Weight1) && (
+                <div className="grid  grid-cols-4 border-b  border-mainorange items-center text-[14px]">
+                  <div className="ml-3">Tải trọng</div>
+                  <div className="col-span-3 grid grid-cols-2 ">
+                    <div className="py-3">{items.Weight}</div>
+                    <div className="bg-gray-200 py-3 pl-3">{items.Weight1}</div>
+                  </div>
                 </div>
-              </div>
-              <div className="grid  grid-cols-4 border-b  border-mainorange items-center text-[14px]">
-                <div className="ml-3">Vận tốc</div>
-                <div className="col-span-3 grid grid-cols-2 ">
-                  <div className="py-3">{items.Speed}</div>
-                  <div className="bg-gray-200 py-3 pl-3">{items.Speed1}</div>
+              )}
+              {(items.Speed || items.Speed1) && (
+                <div className="grid  grid-cols-4 border-b  border-mainorange items-center text-[14px]">
+                  <div className="ml-3">Vận tốc</div>
+                  <div className="col-span-3 grid grid-cols-2 ">
+                    <div className="py-3">{items.Speed}</div>
+                    <div className="bg-gray-200 py-3 pl-3">{items.Speed1}</div>
+                  </div>
                 </div>
-              </div>
-              <div className="grid  grid-cols-4 border-b  border-mainorange items-center text-[14px]">
-                <div className="ml-3">Trung chuyển</div>
-                <div className="col-span-3 grid grid-cols-2 ">
-                  <div
-                    className="py-3"
-                    dangerouslySetInnerHTML={Transshipment}
-                  ></div>
-                  <div
-                    className="bg-gray-200 py-3 pl-3"
-                    dangerouslySetInnerHTML={Transshipment1}
-                  ></div>
+              )}
+
+              {(items.Transshipment || items.Transshipment1) && (
+                <div className="grid  grid-cols-4 border-b  border-mainorange items-center text-[14px]">
+                  <div className="ml-3">Trung chuyển</div>
+                  <div className="col-span-3 grid grid-cols-2 ">
+                    <div
+                      className="py-3"
+                      dangerouslySetInnerHTML={Transshipment}
+                    ></div>
+                    <div
+                      className="bg-gray-200 py-3 pl-3"
+                      dangerouslySetInnerHTML={Transshipment1}
+                    ></div>
+                  </div>
                 </div>
-              </div>
-              <div className="grid  grid-cols-4 border-b  border-mainorange items-center text-[14px]">
-                <div className="ml-3">Ghi chú</div>
-                <div className="col-span-3 grid grid-cols-2 ">
-                  <div className="py-3" dangerouslySetInnerHTML={Notes}></div>
-                  <p
-                    className="bg-gray-200 py-3 pl-3"
-                    dangerouslySetInnerHTML={Notes1}
-                  ></p>
+              )}
+              {(items.Notes || items.Notes1) && (
+                <div className="grid  grid-cols-4 border-b  border-mainorange items-center text-[14px]">
+                  <div className="ml-3">Ghi chú</div>
+                  <div className="col-span-3 grid grid-cols-2 ">
+                    <div className="py-3" dangerouslySetInnerHTML={Notes}></div>
+                    <p
+                      className="bg-gray-200 py-3 pl-3"
+                      dangerouslySetInnerHTML={Notes1}
+                    ></p>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </>
         );

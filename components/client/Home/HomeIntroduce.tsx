@@ -76,14 +76,14 @@ const HomeIntroduce = () => {
                   <Link href={`/lich-tau-chay`}>
                     <div className="flex flex-col">
                       <div className="group">
-                        <div className="w-full h-full overflow-hidden">
+                        <div className="p:h-[130px] d:h-[275px] w-full overflow-hidden">
                           <img
                             src={items.image}
                             alt="Departure Schedule"
                             className="w-full h-full hover:scale-110 duration-300"
                           />
                         </div>
-                        <div className="flex items-center gap-3 p:text-[14px] w-max d:text-[22px] font-semibold uppercase py-4 justify-center group-hover:text-mainorange duration-300">
+                        <div className="flex items-center gap-3 p:text-[12px]  d:text-[22px] font-bold font-LexendDeca text-center p:w-max d:w-full uppercase py-4 justify-center group-hover:text-mainorange duration-300">
                           <div>{items.start}</div>
                           <BsArrowLeftRight />
                           <div>{items.end}</div>
@@ -134,25 +134,33 @@ const HomeIntroduce = () => {
                       isOption === idx + 1 ? "   h-max" : "h-0 overflow-hidden"
                     } duration-300 text-[14px] `}
                   >
-                    <div className="flex justify-between py-5 border-b border-black">
-                      <p>Người lớn</p>
-                      <p>{items.Adult}VNĐ</p>
-                    </div>
-                    <div className="flex justify-between py-5 border-b border-black">
-                      <p>
-                        Người cao tuổi (từ 60 tuổi trở lên, áp dụng cho công dân
-                        VN)
-                      </p>
-                      <p>{items.Elderly}VNĐ</p>
-                    </div>
-                    <div className="flex justify-between py-5 border-b border-black">
-                      <p>Người khuyết tật (áp dụng cho công dân VN)</p>
-                      <p>{items.DisablePeople}VNĐ</p>
-                    </div>
-                    <div className="flex justify-between py-5 border-b border-black">
-                      <p>Trẻ em (Từ 6-11 tuổi tính theo năm sinh)</p>
-                      <p>{items.Children}VNĐ</p>
-                    </div>
+                    {items.Adult && (
+                      <div className="flex justify-between py-5 border-b border-black">
+                        <p>Người lớn</p>
+                        <p>{items.Adult}VNĐ</p>
+                      </div>
+                    )}
+                    {items.Elderly && (
+                      <div className="flex justify-between py-5 border-b border-black">
+                        <p>
+                          Người cao tuổi (từ 60 tuổi trở lên, áp dụng cho công
+                          dân VN)
+                        </p>
+                        <p>{items.Elderly}VNĐ</p>
+                      </div>
+                    )}
+                    {items.DisablePeople && (
+                      <div className="flex justify-between py-5 border-b border-black">
+                        <p>Người khuyết tật (áp dụng cho công dân VN)</p>
+                        <p>{items.DisablePeople}VNĐ</p>
+                      </div>
+                    )}
+                    {items.Children && (
+                      <div className="flex justify-between py-5 border-b border-black">
+                        <p>Trẻ em (Từ 6-11 tuổi tính theo năm sinh)</p>
+                        <p>{items.Children}VNĐ</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}

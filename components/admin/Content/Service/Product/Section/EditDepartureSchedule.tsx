@@ -221,36 +221,36 @@ const EditDepartureSchedule = ({ open, setOpen }: any) => {
               />
             </div>
           </div>
-          <div className="flex">
-            <div className="flex flex-col gap-2">
-              <label className="font-semibold ">Hình ảnh</label>
-              <div className="flex ">
-                <label>
-                  <div className="cursor-pointer">
-                    <div className="flex gap-1 items-center p-2 px-4 bg-red-500 hover:bg-red-600 border text-white rounded-full">
-                      <AiOutlineCloudUpload className="text-[32px] " />
-                    </div>
 
-                    <input
-                      type="file"
-                      className="w-0 h-0"
-                      onChange={(e) => HandleUploadImage(e, "posts")}
-                    />
+          <div className="flex flex-col gap-2">
+            <label className="font-semibold ">Hình ảnh</label>
+            <div className="flex ">
+              <label>
+                <div className="cursor-pointer">
+                  <div className="flex gap-1 items-center p-2 px-4 bg-red-500 hover:bg-red-600 border text-white rounded-full">
+                    <AiOutlineCloudUpload className="text-[32px] " />
                   </div>
-                </label>
-                <div>{imageUrl && <img src={imageUrl} alt="demo" />}</div>
-              </div>
-            </div>
-            <div>
-              <Radio.Group
-                onChange={(e) => setTypeFare(e.target.value)}
-                value={typeFare}
-              >
-                <Radio value={"FastFerry"}>Tàu cao tốc</Radio>
-                <Radio value={"ROROFerry"}>Phà</Radio>
-              </Radio.Group>
+
+                  <input
+                    type="file"
+                    className="w-0 h-0"
+                    onChange={(e) => HandleUploadImage(e, "posts")}
+                  />
+                </div>
+              </label>
+              <div>{imageUrl && <img src={imageUrl} alt="demo" />}</div>
             </div>
           </div>
+          <div>
+            <Radio.Group
+              onChange={(e) => setTypeFare(e.target.value)}
+              value={typeFare}
+            >
+              <Radio value={"FastFerry"}>Tàu cao tốc</Radio>
+              <Radio value={"ROROFerry"}>Phà</Radio>
+            </Radio.Group>
+          </div>
+
           <div className="flex flex-col gap-2">
             <label className="font-semibold ">Giá vé</label>
             <div className="flex flex-col gap-2">
@@ -294,7 +294,7 @@ const EditDepartureSchedule = ({ open, setOpen }: any) => {
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <label className="font-semibold ">Tải trọng</label>
+            <label className="font-semibold ">Ghi chú</label>
             <div className="flex flex-col gap-2">
               <TextEditor
                 initialValue={`<p>Lượt đi</p>`}
