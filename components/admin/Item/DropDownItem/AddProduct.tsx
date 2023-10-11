@@ -7,7 +7,6 @@ import {
 } from "react-icons/ai";
 import { Drawer, Select, Space, notification } from "antd";
 import Input from "../Input";
-import dynamic from "next/dynamic";
 import { useStateProvider } from "@context/StateProvider";
 import { useData } from "@context/DataProviders";
 import {
@@ -16,12 +15,9 @@ import {
 } from "@components/items/server-items/Handle";
 import { addDocument } from "@config/Services/Firebase/FireStoreDB";
 import { TypeProductItems } from "@assets/item";
+import TextEditor from "@components/admin/Item/CKEditor/TextEditor";
 
 const AddProduct = ({}) => {
-  const Editor = dynamic(() => import("../../Item/CKEditor/TextEditor"), {
-    ssr: false,
-  });
-
   const [imageUrl, setImageUrl] = useState<string | undefined>();
   const [Title, setTitle] = useState<any>();
   const [titleUrl, setTitleUrl] = useState<string | undefined>();
@@ -348,7 +344,7 @@ const AddProduct = ({}) => {
           open={open}
           width={800}
         >
-          <Editor onChange={setContent} initialValue={initial1} />
+          <TextEditor onChange={setContent} initialValue={initial1} />
         </Drawer>
       </>
       <>
@@ -359,7 +355,7 @@ const AddProduct = ({}) => {
           open={openDescription}
           width={800}
         >
-          <Editor onChange={setDescribe} initialValue={initDescribe} />
+          <TextEditor onChange={setDescribe} initialValue={initDescribe} />
         </Drawer>
       </>
     </div>

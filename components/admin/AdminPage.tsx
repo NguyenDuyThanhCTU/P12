@@ -10,10 +10,10 @@ import { useAuth } from "@context/AuthProviders";
 import React from "react";
 
 const AdminPage = () => {
-  // const { verify } = useAuth();
-  const verify = true;
+  const { verify } = useAuth();
+
   return (
-    <>
+    <div>
       {verify ? (
         <div className="grid grid-flow-col font-LexendDeca relative ">
           <AdminDropDown />
@@ -56,7 +56,7 @@ const AdminPage = () => {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 

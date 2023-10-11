@@ -5,8 +5,8 @@ import React from "react";
 
 const IntroSlugPage = async () => {
   let IntroduceData: any = await getDataByTypeProps("Introduction", "url", "/");
-  const markup = { __html: IntroduceData[0].content };
-  const title = IntroduceData[0].title;
+  const markup = { __html: IntroduceData[0]?.content };
+  const title = IntroduceData[0]?.title;
 
   return (
     <>

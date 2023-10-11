@@ -5,7 +5,7 @@ import { notification } from "antd";
 import { useStateProvider } from "@context/StateProvider";
 import { useData } from "@context/DataProviders";
 import { updateDocument } from "@config/Services/Firebase/FireStoreDB";
-import TextEditor from "../CKEditor/TextEditor";
+import TextEditor from "@components/admin/Item/CKEditor/TextEditor";
 
 const AddPost = ({ type }: any) => {
   const [editorData, setEditorData] = useState<string>("");

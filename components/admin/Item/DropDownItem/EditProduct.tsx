@@ -6,7 +6,6 @@ import { Drawer, Radio, Select, Space, notification } from "antd";
 
 import Input from "../Input";
 
-import dynamic from "next/dynamic";
 import { useStateProvider } from "@context/StateProvider";
 import { useData } from "@context/DataProviders";
 import {
@@ -15,12 +14,9 @@ import {
 } from "@components/items/server-items/Handle";
 import { updateDocument } from "@config/Services/Firebase/FireStoreDB";
 import { TypeProductItems } from "@assets/item";
+import TextEditor from "@components/admin/Item/CKEditor/TextEditor";
 
 const AddProduct = ({}) => {
-  const Editor = dynamic(() => import("../../Item/CKEditor/TextEditor"), {
-    ssr: false,
-  });
-
   const [imageUrl, setImageUrl] = useState<string | undefined>();
   const [Title, setTitle] = useState<any>();
   const [titleUrl, setTitleUrl] = useState<any>();
@@ -379,7 +375,7 @@ const AddProduct = ({}) => {
           open={open}
           width={800}
         >
-          <Editor
+          <TextEditor
             onChange={setContent}
             initialValue={
               ProductData?.content ? ProductData?.content : initial1
@@ -395,7 +391,7 @@ const AddProduct = ({}) => {
           open={openDescription}
           width={800}
         >
-          <Editor
+          <TextEditor
             onChange={setDescribe}
             initialValue={
               ProductData?.describe ? ProductData?.describe : initDescribe

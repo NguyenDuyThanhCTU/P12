@@ -29,7 +29,7 @@ function Hotline() {
       <Link href={`tel:${ContactData.phone}`}>
         <div className="flex items-center">
           <div className="text-black font-semibold d:flex p:hidden justify-start items-center rounded-full w-[250px]  h-[60px] bg-white shadow-2xl absolute right-5">
-            <span className="ml-5">Liên hệ với chúng tôi</span>
+            <span className="ml-5">Hotline: {ContactData.phone}</span>
           </div>
           <div className="h-14 w-14   call-animation">
             <BiPhoneCall className="text-white text-[40px]" />

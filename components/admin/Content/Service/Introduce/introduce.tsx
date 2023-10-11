@@ -1,16 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Drawer, Empty, Input, Modal, Select, Space, notification } from "antd";
-import dynamic from "next/dynamic";
 import { useStateProvider } from "@context/StateProvider";
 import { useData } from "@context/DataProviders";
-import {
-  addDataToDocument,
-  addDocument,
-  updateDocumentByField,
-} from "@config/Services/Firebase/FireStoreDB";
+import { updateDocumentByField } from "@config/Services/Firebase/FireStoreDB";
 import { IntroduceItems } from "@assets/item";
-import TextEditor from "../../../Item/CKEditor/TextEditor";
+import TextEditor from "@components/admin/Item/CKEditor/TextEditor";
 
 const Introduce = () => {
   const [openDrawer, setOpenDrawer] = useState(false);

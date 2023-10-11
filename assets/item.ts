@@ -272,7 +272,7 @@ export const mainHeaderItems = [
 export const subHeaderItems = [
   {
     name: "Dịch vụ",
-    link: "dat-ve",
+    link: "dich-vu-khac",
   },
   {
     name: "Giá vé",
@@ -283,8 +283,8 @@ export const subHeaderItems = [
     link: "dat-ve",
   },
   {
-    name: "Quan hệ cổ đông",
-    link: "quan-he-co-dong",
+    name: "Lịch tàu chạy",
+    link: "lich-tau-chay",
   },
   {
     name: "Khuyến mãi",

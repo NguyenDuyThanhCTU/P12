@@ -9,7 +9,6 @@ const IntroducePage = async ({ params }: { params: { slug: string } }) => {
     "url",
     params.slug
   );
-  console.log(params.slug);
   const markup: any = { __html: IntroduceData[0]?.content };
   const title: any = IntroduceData[0]?.title;
   const topic: any = IntroduceData[0]?.type;

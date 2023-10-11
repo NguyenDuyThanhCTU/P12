@@ -77,6 +77,28 @@
   }
 }
 
+
+@keyframes zoom {
+  0% {
+    color: red;
+    transform: scale(0.9);
+  }
+  50% {
+    color: blue;
+    transform: scale(1);
+  }
+  100% {
+    color: red;
+    transform: scale(0.9);
+  }
+}
+
+.zoom {
+  animation: zoom 2s infinite; 
+  text-align: center;
+}
+
+
 /*<---------------------------------------------------------- Truncate ----------------------------------------------------------> */
 
 .truncate2 {

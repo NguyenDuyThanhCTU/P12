@@ -16,7 +16,6 @@ const ListDepartureSchedule = () => {
   const { setIsRefetch } = useStateProvider();
   const [open, setOpen] = useState(false);
   const { setUpdateId } = useData();
-  console.log(DepartureSchedule);
   const HandleOpenOption = (idx: number) => {
     if (Option === idx) {
       setOption(0);

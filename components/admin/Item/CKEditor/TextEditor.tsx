@@ -1,21 +1,26 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import React, { useEffect, useState, useRef } from "react";
+
 import { uploadImage } from "@components/items/server-items/Handle";
 
 const TextEditor = ({ initialValue, onChange }: any) => {
   const [editorData, setEditorData] = useState(initialValue);
+  const editorRef = useRef<any>();
+  const [editorLoaded, setEditorLoaded] = useState(false);
+  const { CKEditor, ClassicEditor }: any = editorRef.current || {};
+
+  useEffect(() => {
+    editorRef.current = {
+      CKEditor: require("@ckeditor/ckeditor5-react").CKEditor, // v3+
+      ClassicEditor: require("@ckeditor/ckeditor5-build-classic"),
+    };
+    setEditorLoaded(true);
+  }, []);
 
   useEffect(() => {
     setEditorData(initialValue);
   }, [initialValue]);
 
-  const handleEditorChange = (event: any, editor: any) => {
-    const data = editor.getData();
-    setEditorData(data);
-    onChange(data);
-  };
   function uploadAdapter(loader: any) {
     return {
       upload: () => {
@@ -50,12 +55,20 @@ const TextEditor = ({ initialValue, onChange }: any) => {
 
   return (
     <div>
-      <CKEditor
-        editor={ClassicEditor}
-        config={{ extraPlugins: [uploadPlugin] }}
-        data={editorData}
-        onChange={handleEditorChange}
-      />
+      {editorLoaded ? (
+        <CKEditor
+          editor={ClassicEditor}
+          config={{ extraPlugins: [uploadPlugin] }}
+          data={editorData}
+          onChange={(event: any, editor: any) => {
+            const data = editor.getData();
+            setEditorData(data);
+            onChange(data);
+          }}
+        />
+      ) : (
+        "loading..."
+      )}
     </div>
   );
 };
