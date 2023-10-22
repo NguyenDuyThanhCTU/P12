@@ -380,7 +380,12 @@ export const TravelHandbookTypeItems = [
     value: "thong-tin-can-biet",
   },
 ];
-
+export const TypeProductItems = [
+  {
+    label: "hi",
+    value: "gi",
+  },
+];
 export const RouteItem = [
   {
     label: "Tuyến CÔN ĐẢO",

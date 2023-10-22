@@ -80,12 +80,14 @@ const Header = () => {
                     </div>
                   </Link>
                 </div> */}
-                  <div className="flex w-full  gap-5 items-center text-[0.8vw]  justify-center ">
+                </div>
+                <div className="flex flex-col justify-start gap-3  h-[78px]">
+                  <div className="flex w-full  gap-5 items-center  justify-center ">
                     <div className="flex gap-5 text-mainorange">
                       {subHeader.map((items: any, idx: any) => (
                         <div className="group relative" key={idx}>
                           <Link
-                            className="font-bold uppercase hover:text-orange-600"
+                            className="font-bold uppercase hover:text-orange-600 text-[16px]"
                             href={`/${items.link}`}
                           >
                             {items.name}
@@ -95,7 +97,7 @@ const Header = () => {
                     </div>
                     <div className="group relative">
                       <Link
-                        className="font-bold uppercase text-mainorange hover:text-orange-600"
+                        className="font-bold uppercase text-mainorange hover:text-orange-600 text-[16px]"
                         href={`/`}
                       >
                         <FaListUl />
@@ -114,8 +116,10 @@ const Header = () => {
                       </div>
                     </div>
                   </div>
+                  <div className="flex">
+                    <Shipbrand />
+                  </div>
                 </div>
-                <Shipbrand />
               </div>
             </div>
             <div className="d:hidden p:flex justify-end items-center  mr-5 w-full h-full">

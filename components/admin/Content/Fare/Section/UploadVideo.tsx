@@ -8,7 +8,7 @@ import { BsArrowLeftRight } from "react-icons/bs";
 import { useData } from "@context/DataProviders";
 import EditFare from "./EditFare";
 
-const UploadVideo = ({ type }: any) => {
+const UploadVideo = ({ type, topic }: any) => {
   const [startPoint, setStartPoint] = useState<string>("");
   const [endPoint, setEndPoint] = useState<string>("");
   const [open, setOpen] = useState(false);
@@ -38,6 +38,7 @@ const UploadVideo = ({ type }: any) => {
         ship: "",
         note: "",
         type: type,
+        topic: topic,
       };
       addDocument("fare", data).then((data) => {
         notification.success({

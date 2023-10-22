@@ -14,7 +14,7 @@ const Video = ({ topic, type }: any) => {
           <div>
             <UploadVideo type={type} />
           </div>
-          <ListVideo type={type} />
+          <ListVideo type={type} topic={topic} />
         </div>
       </div>
     </div>

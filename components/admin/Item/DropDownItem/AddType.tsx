@@ -15,6 +15,7 @@ import {
   delDocument,
 } from "@config/Services/Firebase/FireStoreDB";
 import { convertToCodeFormat } from "@components/items/server-items/Handle";
+import { TypeProductItems } from "@assets/item";
 // import { TypeProductItems } from "@assets/item";
 
 type ChangeEventType = React.ChangeEvent<HTMLInputElement>;
