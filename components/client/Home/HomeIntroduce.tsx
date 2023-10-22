@@ -167,7 +167,7 @@ const HomeIntroduce = () => {
             </div>
             <div className="pt-5">
               <img
-                src="https://superdong.com.vn/wp-content/uploads/2019/04/tct-superdong-1.png"
+                src="https://phuquocexpressboat.com.vn/public/upload/ccb1eb54ac13624d3b02.jpg"
                 alt="intro"
               />
             </div>
@@ -178,7 +178,7 @@ const HomeIntroduce = () => {
       <div>
         <div className="d:w-[1600px] mx-auto p:w-auto">
           <img
-            src="https://superdong.com.vn/wp-content/uploads/2021/11/tau-cao-toc-superdong.jpg"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjhCHxYrUiOACKU6UOXIdIVuRDfhtutUdkqlP2Y5B7D9ph_Jd9Ro55L2rFav6h3KY_vgZjbzewoFhZfSYtF-EDWgNMBmUYdmF-76XjOuQsW2JOZRZzoKEbGjYRwLLUMs3KDv-Dzv84O7r-GDIW7o1J8M87_N62_ND6jvzD_7biXw3lEnSU0xPvMeRGg/s2500/Tau-cao-toc-Trung-Trac-khoi-hanh-tu-Vung-Tau-di-thang-Da-Nang.JPG"
             alt="intro"
           />
         </div>

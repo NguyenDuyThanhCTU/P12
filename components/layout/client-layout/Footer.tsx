@@ -4,6 +4,7 @@ import { PolicyItems } from "@assets/item";
 import { useData } from "@context/DataProviders";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
+import Shipbrand from "@components/client/Shipbrand/Shipbrand";
 
 const Footer = () => {
   const [isOption, setIsOption] = useState<number>(0);
@@ -63,7 +64,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-full">
-          <h2 className="text-[20px]">Hệ thống phòng vé</h2>
+          {/* <h2 className="text-[20px]">Hệ thống phòng vé</h2>
           <div className="grid p:grid-cols-1 d:grid-cols-3 gap-5 mt-5">
             {Branches.map((items: any, idx: number) => (
               <div className="flex flex-col" key={idx}>
@@ -98,7 +99,7 @@ const Footer = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

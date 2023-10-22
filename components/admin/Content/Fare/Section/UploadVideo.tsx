@@ -30,10 +30,13 @@ const UploadVideo = ({ type }: any) => {
       const data = {
         start: startPoint,
         end: endPoint,
-        Adult: "",
-        Elderly: "",
+        vip: "",
+        eco: "",
         DisablePeople: "",
         Children: "",
+        time: "",
+        ship: "",
+        note: "",
         type: type,
       };
       addDocument("fare", data).then((data) => {

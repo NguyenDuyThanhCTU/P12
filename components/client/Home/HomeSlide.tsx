@@ -10,7 +10,7 @@ import { useData } from "@context/DataProviders";
 const HomeSlide = () => {
   const { Slides } = useData();
   return (
-    <div>
+    <div className="z-10 relative">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

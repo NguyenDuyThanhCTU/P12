@@ -381,30 +381,54 @@ export const TravelHandbookTypeItems = [
   },
 ];
 
-export const TypeProductItems = [
+export const RouteItem = [
   {
-    label: "Teraco",
-    value: "teraco",
+    label: "Tuyến CÔN ĐẢO",
+    value: "tuyen-con-dao",
   },
   {
-    label: "SRM",
-    value: "srm",
+    label: "Tuyến SÓC TRĂNG",
+    value: "tuyen-soc-trang",
   },
   {
-    label: "Dothanh",
-    value: "dothanh",
+    label: "Tuyến VŨNG TÀU",
+    value: "tuyen-vung-tau",
   },
   {
-    label: "Tata",
-    value: "tata",
+    label: "Tuyến Phú Quốc",
+    value: "tuyen-phu-quoc",
   },
   {
-    label: "Kenbo",
-    value: "kenbo",
+    label: "Tuyến Nam Du",
+    value: "tuyen-nam-du",
   },
   {
-    label: "TMT",
-    value: "tmt",
+    label: "Tuyến RẠCH GIÁ",
+    value: "tuyen-rach-gia",
+  },
+  {
+    label: "Tuyến HÒN SƠN",
+    value: "tuyen-hon-son",
+  },
+  {
+    label: "Tuyến Hà Tiên",
+    value: "tuyen-ha-tien",
+  },
+  {
+    label: "Tuyến Hòn Nghệ",
+    value: "tuyen-hon-nghe",
+  },
+  {
+    label: "Tuyến Phan Thiết",
+    value: "tuyen-phan-thiet",
+  },
+  {
+    label: "Tuyến Phú Quý",
+    value: "tuyen-phu-quy",
+  },
+  {
+    label: "Tuyến Lại Sơn",
+    value: "tuyen-lai-son",
   },
 ];
 

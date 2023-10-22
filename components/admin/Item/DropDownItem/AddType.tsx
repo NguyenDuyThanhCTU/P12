@@ -15,7 +15,7 @@ import {
   delDocument,
 } from "@config/Services/Firebase/FireStoreDB";
 import { convertToCodeFormat } from "@components/items/server-items/Handle";
-import { TypeProductItems } from "@assets/item";
+// import { TypeProductItems } from "@assets/item";
 
 type ChangeEventType = React.ChangeEvent<HTMLInputElement>;
 
@@ -207,7 +207,7 @@ const AddType: React.FC = () => {
                   PlaceHolder=""
                 />
 
-                <div
+                {/* <div
                   className={`flex flex-col gap-2 h-[100px] overflow-hidden`}
                 >
                   <label className="text-md font-medium ">
@@ -229,7 +229,7 @@ const AddType: React.FC = () => {
                       </option>
                     ))}
                   </select>
-                </div>
+                </div> */}
 
                 <div className="flex gap-6 mt-10">
                   <button

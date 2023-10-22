@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { DatePicker, Radio, Select, Space, notification } from "antd";
 import { useData } from "@context/DataProviders";
 import moment from "moment";
+import AddressDropdown from "@components/items/AddressDropdown";
 
 const Cart = () => {
   const [name, setName] = useState("");
@@ -68,7 +69,7 @@ const Cart = () => {
       });
 
       const response = await fetch(
-        "https://formsubmit.co/ajax/thanhnd2512@gmail.com",
+        "https://formsubmit.co/ajax/vetaucaotocrachgia@gmail.com",
         {
           method: "POST",
           headers: {
@@ -208,46 +209,12 @@ const Cart = () => {
                 />
               </div>
 
-              <div className=" flex gap-2">
-                <div className="flex flex-col gap-2">
-                  <label className="font-semibold ">Tỉnh/Thành phố</label>
-
-                  <input
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                    type="text"
-                    className="p-2 border border-mainorange outline-none text-black"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="font-semibold ">Quận/huyện</label>
-
-                  <input
-                    value={district}
-                    onChange={(e) => setDistrict(e.target.value)}
-                    type="text"
-                    className="p-2 border border-mainorange outline-none text-black"
-                  />
-                </div>
-              </div>
               <div className="flex flex-col gap-2">
-                <label className="font-semibold ">Phường/xã</label>
-
-                <input
-                  value={street}
-                  onChange={(e) => setStreet(e.target.value)}
-                  type="text"
-                  className="p-2 border border-mainorange outline-none text-black"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label className="font-semibold ">Địa chỉ</label>
-
-                <input
-                  value={address}
-                  onChange={(e) => setAddress(e.target.value)}
-                  type="text"
-                  className="p-2 border border-mainorange outline-none text-black"
+                <label className="font-semibold ">Khu vực</label>
+                <AddressDropdown
+                  setSelectedCityName={setCity}
+                  setSelectedDistrictName={setDistrict}
+                  setSelectedWardName={setAddress}
                 />
               </div>
               <div className="flex flex-col gap-2">

@@ -4,21 +4,28 @@ import React from "react";
 import Input from "./Input";
 import { notification } from "antd";
 import { useStateProvider } from "@context/StateProvider";
+import { IoLocationOutline } from "react-icons/io5";
+import { AiFillPhone } from "react-icons/ai";
+import AddressDropdown from "@components/items/AddressDropdown";
 
 const Contact = () => {
   const [name, setName] = React.useState("");
   const [phone, setPhone] = React.useState("");
   const [email, setEmail] = React.useState("");
-  const [area, setArea] = React.useState("");
+  const [cities, setCities] = React.useState<any>("");
+  const [districts, setDistricts] = React.useState("");
+  const [wards, setWards] = React.useState("");
   const [content, setContent] = React.useState("");
-  const { Branches } = useData();
+  const { ContactData } = useData();
   const { setIsLoading } = useStateProvider();
 
   const HandleDiscard = () => {
     setName("");
     setPhone("");
     setEmail("");
-    setArea("");
+    setCities("");
+    setDistricts("");
+    setWards("");
     setContent("");
   };
 
@@ -34,10 +41,9 @@ const Contact = () => {
     } else {
       const dataFields = [
         { title: "Họ Tên:", value: name },
-
         { title: "SĐT:", value: phone },
         { title: "Email:", value: email },
-        { title: "Khu vực:", value: area },
+        { title: "Khu vực:", value: `${cities} - ${districts} - ${wards}` },
         { title: "Nội dung lời nhắn:", value: content },
       ];
       let data: any = {};
@@ -47,7 +53,7 @@ const Contact = () => {
       });
 
       const response = await fetch(
-        "https://formsubmit.co/ajax/thanhnd2512@gmail.com ",
+        "https://formsubmit.co/ajax/vetaucaotocrachgia@gmail.com",
         {
           method: "POST",
           headers: {
@@ -78,7 +84,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="grid p:grid-cols-1 d:grid-cols-3 gap-5 py-5 font-LexendDeca">
+    <div className="grid p:grid-cols-1 d:grid-cols-3 gap-10 py-5 font-LexendDeca">
       <div className="flex flex-col">
         <h2 className="py-5 text-[20px]  font-semibold">
           Chúng tôi luôn lắng nghe bạn!
@@ -87,7 +93,15 @@ const Contact = () => {
           <Input type="Họ tên*" value={name} setData={setName} />
           <Input type="Số điện thoại*" value={phone} setData={setPhone} />
           <Input type="Email" value={email} setData={setEmail} />
-          <Input type="Khu vực" value={area} setData={setArea} />
+          <div className="flex flex-col gap-2">
+            <label className="font-semibold ">Khu vực</label>
+            <AddressDropdown
+              setSelectedCity={setCities}
+              setSelectedDistrict={setDistricts}
+              setSelectedWardName={setWards}
+            />
+          </div>
+
           <div className="flex flex-col gap-2">
             <label className="font-semibold ">Nội dung lời nhắn</label>
             <textarea
@@ -106,8 +120,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 col-span-2 gap-2">
-        {Branches.map((item: any, idx: number) => (
+      <div className="flex w-full justify-start col-span-2 items-center gap-3 flex-col">
+        {/* {Branches.map((item: any, idx: number) => (
           <div className="flex flex-col" key={idx}>
             <h2 className="font-bold text-[18px]">{item.name} </h2>
             <div className="hmax flex flex-col font-LexendDeca font-light  p-3">
@@ -117,7 +131,28 @@ const Contact = () => {
               <p>(Giờ làm việc: {item.worktime})</p>
             </div>
           </div>
-        ))}
+        ))} */}
+        <h2 className="font-Montserrat text-[32px] font-light ">
+          {" "}
+          Phòng VRS Tàu cao tốc RG
+        </h2>
+        <div className="flex flex-col items-start gap-2">
+          <div className="flex items-center gap-2">
+            <IoLocationOutline />
+            <p>ĐC: {ContactData.address}</p>
+          </div>
+          <div className="flex items-center gap-2">
+            <AiFillPhone />
+            <p>SĐT:{ContactData.phone} </p>
+          </div>
+        </div>
+        <div>
+          <img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgILC2hs044LQuv9zQW8Yus3ykAYdGkrL-VCoYURF3kLi0CqZq2upFI3LPqRgyaCCpunHWmPPiKoewmoJJ4n_xbCGOT0-CW-ou5OL_xF0lXSS1oM42as_i4wAZ-hl_iJ-0YjtJqqkPd22etKVgMDG7DS5dXvxRSdcUhbWxWqZLQNj1j626URnaT8SAY/s16000/Tau-cao-toc-Trung-Trac-khoi-hanh.JPG"
+            alt="demo"
+            className="shadow-sm shadow-gray-300"
+          />
+        </div>
       </div>
     </div>
   );

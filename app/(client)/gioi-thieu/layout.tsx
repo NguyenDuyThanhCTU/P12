@@ -9,16 +9,16 @@ export default function IntroduceLayout({
     <>
       <div>
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/dora-a85b2.appspot.com/o/UI%2Ftau-cao-toc-superdong.jpeg?alt=media&token=956079e5-2c2d-42a0-b732-0c1cb9da0818"
+          src="https://taucaotoc.vn/wp-content/uploads/2020/04/Tau-cao-toc-Trung-Nhi-tai-Con-Dao.jpg"
           alt="Introduce Header"
-          className="w-[100vw]"
+          className="w-[100vw] h-[700px] object-cover"
         />
       </div>
       {children}
       <img
-        src="https://firebasestorage.googleapis.com/v0/b/dora-a85b2.appspot.com/o/UI%2FSuperdong.jpg?alt=media&token=36616f7d-2c27-4ba1-a583-0d884935b949"
+        src="https://superdong.com.vn/wp-content/uploads/2019/04/tct-superdong-1.png"
         alt="Introduce Footer"
-        className="w-[100vw]"
+        className="w-[100vw]  h-[700px] object-cover"
       />
     </>
   );

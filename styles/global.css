@@ -99,6 +99,26 @@
 }
 
 
+@keyframes flicker {
+  0% {
+      color: #f2f2f2;
+  }
+  50% {
+      color: #f3b41e;
+  }
+  100% {
+      color: #f2f2f2;
+  }
+}
+
+.flicker {
+  animation: flicker 1s infinite; 
+  text-align: center;
+
+}
+
+
+
 /*<---------------------------------------------------------- Truncate ----------------------------------------------------------> */
 
 .truncate2 {

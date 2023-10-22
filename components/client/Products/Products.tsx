@@ -13,7 +13,7 @@ import ProductCard from "./Items/ProductCard";
 
 const Products = () => {
   const [DataFetch, setDataFetch] = useState([]);
-  const [current, setCurrent] = useState(1);
+  const [, setCurrent] = useState(1);
   const { productTypes } = useData();
   const [type, setType] = useState("");
   const { id } = useParams();
@@ -87,9 +87,9 @@ const Products = () => {
             </>
           )}
         </div>
-        <div className="mt-5 d:flex justify-center p:hidden w-full">
+        {/* <div className="mt-5 d:flex justify-center p:hidden w-full">
           <Pagination current={current} onChange={onChange} total={50} />
-        </div>
+        </div> */}
       </div>
     </>
   );

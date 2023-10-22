@@ -8,9 +8,9 @@ export default function GalleryLayout({
       {" "}
       <div>
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/dora-a85b2.appspot.com/o/UI%2Ftau-cao-toc-superdong.jpeg?alt=media&token=956079e5-2c2d-42a0-b732-0c1cb9da0818"
+          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVrkOp0omYxaxs3IQspJRZwra0pev3PIavTd3jlZ3zbspUtMofPYU5fb_csTX0pXvVpFQ2oRpwJO9qfgRRYTVHXPvuY1TnCVHWe4DvffScCpsimkjCfhmN6PksnzGaeZjg-KPkl7n2iuLsbhCQOQIJicvt6aVrnw-CSge3oUcpen46NFX70GLLzWx0/s16000/Tau-cao-toc-hai-than-Trung-Trac.JPG"
           alt="Introduce Header"
-          className="w-[100vw]"
+          className="w-[100vw] h-[700px] object-cover"
         />
       </div>
       {children}
