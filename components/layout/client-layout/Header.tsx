@@ -12,7 +12,7 @@ import Shipbrand from "@components/client/Shipbrand/Shipbrand";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const { TradeMarkData } = useData();
-
+  const [openTable, setOpenTable] = useState(false);
   const subHeader = [
     {
       name: "Lịch tàu chạy",
@@ -32,9 +32,9 @@ const Header = () => {
       <div className="bg-white ">
         <div className=" h-full relative  bg-white ">
           {/* <---------------------------------------------------------- Desktop ----------------------------------------------------------> */}
-          <div className="flex justify-start items-center p:h-[65px]  d:h-[130px] bg-mainblue ">
-            <div className="p:w-[5vw] d:w-[15vw] h-full bg-mainwhite"></div>
-            <div className=" w-[65vw]  flex relative gap-20">
+          <div className="flex justify-start items-center p:h-[65px]  d:h-[130px] bg-mainblue  ">
+            <div className="p:w-[5vw] d:w-[5vw] h-full bg-mainwhite"></div>
+            <div className=" w-[50vw]  flex relative gap-20">
               <Link
                 href="/"
                 className="bg-none z-10 top-0 relative flex
@@ -50,13 +50,14 @@ const Header = () => {
               <div className="p:hidden d:flex items-center gap-10 w-full text-mainwhite justify-start  text-center ">
                 <div className="flex flex-col">
                   <div className="uppercase">
-                    <h3 className="text-[14px]">
+                    <h3 className="text-[14px] w-max">
                       Phòng vé tàu cao tốc - tàu phà
                     </h3>
                     <h1 className="font-bold text-[24px]">Sáu Chiến</h1>
                     <h3 className="text-[14px]">
                       {" "}
-                      Tổng đài đặt vé: 0913.95.97.90 - 0914.14.88.88
+                      Tổng đài đặt vé: <br /> 0913.95.97.90 (ZALO) -
+                      0914.14.88.88
                     </h3>
                   </div>
                   {/* <div className="flex w-full justify-between items-center text-[0.7vw] ">
@@ -81,13 +82,13 @@ const Header = () => {
                   </Link>
                 </div> */}
                 </div>
-                <div className="flex flex-col justify-start gap-3  h-[78px]">
-                  <div className="flex w-full  gap-5 items-center  justify-center ">
+                <div className="flex flex-col justify-center  gap-3  h-[78px]">
+                  <div className="flex w-max  gap-5 items-center  justify-center ">
                     <div className="flex gap-5 text-mainorange">
                       {subHeader.map((items: any, idx: any) => (
                         <div className="group relative" key={idx}>
                           <Link
-                            className="font-bold uppercase hover:text-orange-600 text-[16px]"
+                            className="font-bold uppercase hover:text-orange-600 text-[16px] w-max"
                             href={`/${items.link}`}
                           >
                             {items.name}
@@ -117,7 +118,7 @@ const Header = () => {
                     </div>
                   </div>
                   <div className="flex">
-                    <Shipbrand />
+                    <Shipbrand Onchange={setOpenTable} Value={openTable} />
                   </div>
                 </div>
               </div>

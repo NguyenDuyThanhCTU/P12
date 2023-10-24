@@ -13,7 +13,7 @@ interface DataType {
   end: string;
 }
 
-const Shipbrand = () => {
+const Shipbrand = ({ Value, Onchange }: any) => {
   const [departureSchedule, setDepartureSchedule] = React.useState<any>([]);
   const [Date, setDate] = React.useState<any>([]);
   const [Data, setData] = React.useState<any>([]);
@@ -44,6 +44,7 @@ const Shipbrand = () => {
   ];
 
   const HandleSearch = () => {
+    Onchange(!Value);
     const sort = DepartureSchedule.filter(
       (item: any) => item.id === departureSchedule
     );
@@ -68,7 +69,7 @@ const Shipbrand = () => {
       setData(newDataFormat);
     }
   };
-  console.log(Data);
+
   return (
     <div className="">
       <div className="w-max absolute">
@@ -96,14 +97,21 @@ const Shipbrand = () => {
             </div>
           </div>
         </div>
-        <div className="relative z-40">
-          {Data.length > 0 && (
-            <Table
-              className="mt-5"
-              pagination={false}
-              columns={columns}
-              dataSource={Data}
-            />
+        <div className="relative right-96 bottom-96">
+          {Value ? (
+            <div
+              className="w-screen h-[125vh] flex  bg-none   items-center justify-center"
+              onClick={() => Onchange(false)}
+            >
+              <Table
+                className="mt-5"
+                pagination={false}
+                columns={columns}
+                dataSource={Data}
+              />
+            </div>
+          ) : (
+            <></>
           )}
         </div>
       </div>
