@@ -218,7 +218,7 @@ const Cart = () => {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="font-semibold ">Yêu cầu khá</label>
+                <label className="font-semibold ">Yêu cầu khác</label>
 
                 <input
                   value={description}

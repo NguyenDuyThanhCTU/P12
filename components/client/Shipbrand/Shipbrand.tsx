@@ -97,8 +97,8 @@ const Shipbrand = ({ Value, Onchange }: any) => {
             </div>
           </div>
         </div>
-        <div className="relative right-96 bottom-96">
-          {Value ? (
+        {Value ? (
+          <div className="relative right-96 bottom-72 z-50">
             <div
               className="w-screen h-[125vh] flex  bg-none   items-center justify-center"
               onClick={() => Onchange(false)}
@@ -110,10 +110,10 @@ const Shipbrand = ({ Value, Onchange }: any) => {
                 dataSource={Data}
               />
             </div>
-          ) : (
-            <></>
-          )}
-        </div>
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

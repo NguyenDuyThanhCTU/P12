@@ -47,11 +47,11 @@ const Header = () => {
                   className="p:h-[65px] d:h-[130px] py-2 object-contain bg-mainwhite"
                 />
               </Link>
-              <div className="p:hidden d:flex items-center gap-10 w-full text-mainwhite justify-start  text-center ">
+              <div className="p:hidden d:flex items-center gap-10 w-full text-mainwhite justify-start  text-center ml-20  ">
                 <div className="flex flex-col">
                   <div className="uppercase">
                     <h3 className="text-[14px] w-max">
-                      Phòng vé tàu cao tốc - tàu phà
+                      ĐẠI LÝ VÉ TÀU CAO TỐC- TÀU PHÀ{" "}
                     </h3>
                     <h1 className="font-bold text-[24px]">Sáu Chiến</h1>
                     <h3 className="text-[14px]">
